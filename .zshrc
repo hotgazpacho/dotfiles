@@ -59,6 +59,12 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs node_version rbenv aws)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git node yarn-autocompletions nvm ruby go)
 
+# Make Homebrew's completions available
+# See https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
+if whence -p "brew"; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
