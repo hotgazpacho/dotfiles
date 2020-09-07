@@ -24,3 +24,14 @@ brew cask install hammerspoon
 brew install direnv powerlevel9k
 brew cask install iterm2 font-firacode-nerd-font
 ```
+
+## TODO
+- [ ] iterm2 
+  - [ ] config http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/
+  - [ ] `~/.iterm2_shell_integration.zsh`
+- [ ] vim
+- [ ] vscode 
+  - [ ] `~/Library/Application\ Support/Code/User/keybindings.json}`
+  - [ ] `~/Library/Application\ Support/Code/User/settings.json}`
+  - [ ] `~/Library/Application\ Support/Code/User/snippets}`
+  - [ ] `~/.vscode/extensions`
