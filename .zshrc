@@ -61,7 +61,7 @@ plugins=(git node yarn-autocompletions nvm ruby go)
 
 # Make Homebrew's completions available
 # See https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
-if whence -p "brew"; then
+if whence -p "brew" &> /dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
@@ -70,7 +70,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # direnv hook
-if whence -p "direnv"; then
+if whence -p "direnv" &> /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
