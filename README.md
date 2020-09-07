@@ -17,3 +17,10 @@ This setup does not require using the keyboard control panel to change the modif
 ```console
 brew cask install hammerspoon
 ```
+
+## Terminal
+
+```console
+brew install direnv powerlevel9k
+brew cask install iterm2 font-firacode-nerd-font
+```
