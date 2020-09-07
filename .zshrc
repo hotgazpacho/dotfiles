@@ -98,8 +98,6 @@ alias npx="npx --no-install" # don't install node modules when running npx
 alias yar="yarn"
 alias dotfiles="$(which git) --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 export PATH=/usr/local/sbin:$PATH
 
 # Set the GOBIN path
@@ -139,4 +137,4 @@ load-nvmrc
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+test -e " /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
