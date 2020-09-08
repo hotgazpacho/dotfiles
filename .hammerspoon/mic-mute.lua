@@ -6,9 +6,17 @@ local statusMenu = hs.menubar.new()
 local micMutedIcon = hs.image.imageFromPath(os.getenv("HOME") .. "/.hammerspoon/microphone-muted.png")
 local micHotIcon = hs.image.imageFromPath(os.getenv("HOME") .. "/.hammerspoon/microphone-hot.png")
 
-function MicMute.displayStatus()
-  local currentAudioInput = hs.audiodevice.current(true)
-  local currentAudioInputObject = hs.audiodevice.findInputByUID(currentAudioInput.uid)
+-- The function is called by watcherCallback, which triggers on every input event
+-- Therefor, you need to filter on the event and scope
+function DisplayStatus(uid, event, scope)
+  if (scope ~= 'inpt' and event ~= 'mute') then
+    return
+  end
+  if (uid == nil) then
+    local currentAudioInput = hs.audiodevice.current(true)
+    uid = currentAudioInput.uid
+  end
+  local currentAudioInputObject = hs.audiodevice.findInputByUID(uid)
   MicMute.muted = currentAudioInputObject:inputMuted()
   if MicMute.muted then
     statusMenu:setIcon(micMutedIcon)
@@ -30,16 +38,16 @@ function MicMute.toggleStatus()
     MicAlert = hs.alert.show('Microphone is HOT')
   end
   currentAudioInputObject:setInputMuted(not MicMute.muted)
-  MicMute.displayStatus()
+  DisplayStatus(currentAudioInput.uid, 'mute', 'inpt')
 end
 
 function MicMute.start()
   -- Watch all the input devices to get changes to their statuses
   for i,dev in ipairs(hs.audiodevice.allInputDevices()) do
-    dev:watcherCallback(nil):watcherCallback(MicMute.displayStatus):watcherStart()
+    dev:watcherCallback(nil):watcherCallback(DisplayStatus):watcherStart()
   end
   -- Display the current input status
-  MicMute.displayStatus()
+  DisplayStatus(nil, 'mute', 'inpt')
   -- Click the menu icon to toggle the status
   statusMenu:setClickCallback(MicMute.toggleStatus)
 end
