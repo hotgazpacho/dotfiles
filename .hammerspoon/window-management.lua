@@ -8,7 +8,8 @@ local HALF_WIDTH = COLUMNS / 2
 local ONE_THIRD_WIDTH = COLUMNS / 3
 local TWO_THIRDS_WIDTH = ONE_THIRD_WIDTH * 2
 local ONE_QUARTER_WIDTH = COLUMNS / 4
-local THREE_QUARTERS_WIDTH = ONE_QUARTER_WIDTH * 3
+
+local HALF_HEIGHT = ROWS / 2
 
 -- Set the grid size and remove margin
 -- Also, don't animate window changes... That's too slow
@@ -24,6 +25,14 @@ screenPositions.leftHalf = {
 screenPositions.rightHalf = {
   x = HALF_WIDTH, y = 0,
   w = HALF_WIDTH, h = ROWS
+}
+screenPositions.topHalf = {
+  x = 0, y = 0,
+  w = COLUMNS, h = HALF_HEIGHT
+}
+screenPositions.bottomHalf = {
+  x = 0, y = HALF_HEIGHT,
+  w = COLUMNS, h = HALF_HEIGHT
 }
 screenPositions.leftThird = {
   x = 0, y = 0,
