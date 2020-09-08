@@ -32,6 +32,16 @@ hyper:bind({}, 'right', function()
   hyper.triggered = true
 end)
 
+hyper:bind({}, "up", function()
+  wm.moveWindowToPosition(wm.screenPositions.topHalf)
+  hyper.triggered = true
+end)
+
+hyper:bind({}, "down", function()
+  wm.moveWindowToPosition(wm.screenPositions.bottomHalf)
+  hyper.triggered = true
+end)
+
 hyper:bind('cmd', 'left', function()
   wm.moveWindowToPosition(wm.screenPositions.leftTwoThirds)
   hyper.triggered = true
