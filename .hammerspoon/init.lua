@@ -1,6 +1,9 @@
 local hyper = require('hyper')
+local caffeine = require('caffeine')
 local wm = require('window-management')
 local micMute = require('mic-mute')
+
+caffeine:start()
 micMute:start()
 
 -- lock the screen
@@ -9,9 +12,9 @@ hyper:bind({}, "l", function()
   hyper.triggered = true
 end)
 
--- hyper cmd s to toggle preventing the machine from sleeping
-hyper:bind("cmd", "s", function()
-  hs.caffeinate.toggle('system')
+-- hyper cmd c to toggle preventing the machine from sleeping
+hyper:bind("cmd", "c", function()
+  caffeine.toggle()
   hyper.triggered = true
 end)
 
