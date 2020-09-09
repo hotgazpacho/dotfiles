@@ -1,3 +1,7 @@
+-- watch for changes under ~/.hammerspoon and reload
+local myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon", hs.reload)
+myWatcher:start()
+
 local hyper = require('hyper')
 local caffeine = require('caffeine')
 local wm = require('window-management')
