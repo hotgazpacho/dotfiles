@@ -124,3 +124,8 @@ test -e "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" &
 
 # go-jira
 test -e "jira" && eval "$(jira --completion-script-zsh)"
+
+# fzf - command-line fuzzy finder
+# https://github.com/junegunn/fzf
+# brew install fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
