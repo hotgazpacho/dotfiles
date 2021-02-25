@@ -5,10 +5,10 @@ myWatcher:start()
 local hyper = require('hyper')
 local caffeine = require('caffeine')
 local wm = require('window-management')
-local micMute = require('mic-mute')
+-- local micMute = require('mic-mute')
 
 caffeine:start()
-micMute:start()
+-- micMute:start()
 
 -- lock the screen
 hyper:bind({}, "l", function()
@@ -23,10 +23,10 @@ hyper:bind("cmd", "c", function()
 end)
 
 -- Bind hyper space to toggle the status
-hyper:bind({}, "space", function()
-  micMute.toggleStatus()
-  hyper.triggered = true
-end)
+-- hyper:bind({}, "space", function()
+--  micMute.toggleStatus()
+--  hyper.triggered = true
+-- end)
 
 -- Window Management
 hyper:bind({}, 'left', function()
