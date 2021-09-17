@@ -1,0 +1,10 @@
+command_timeout = 1000
+
+[git_status]
+#format = '([\[$all_status $ahead_behind\]]($style) )'
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+up_to_date = "✓"
+untracked = "🤷‍"
+staged = '[++\($count\)](green)'
