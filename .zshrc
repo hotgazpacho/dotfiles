@@ -57,7 +57,10 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs node_version rbenv aws)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git node yarn-autocompletions golang)
+# NOTE: yarn-autocompletions and zsh-autosuggestions require installation
+# git clone https://github.com/g-plane/zsh-yarn-autocompletions && zsh-yarn-autocompletions && ./install.sh $ZSH_CUSTOM/plugins
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+plugins=(git node yarn-autocompletions zsh-autosuggestions golang)
 
 # Make Homebrew's completions available
 # See https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
