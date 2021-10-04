@@ -12,7 +12,7 @@ launchctl load ~/Library/LaunchAgents/com.local.KeyRemapping.plist
 
 ## Key Mappings and Bindings
 
-This setup does not require using the keyboard control panel to change the modifier keys. Instead, we'll use `hidutil` to change the mapping of `Caps Lock` to `F18`. We'll then use [Hammerspoon](https://hammerspoon.org) to interpret `F18` as `hyper` (`shift` + `ctrl` + `option` + `command`) when pressed with other keys, and `escape` when pressed and released alone. This is accomplished using [launchd](https://www.launchd.info). The keymapping is set in `Library/LaunchAgents/com.local.KeyRemapping.plist`, and should have been acitivated if you followed the steps above. One side effect here is that the light on the `Caps Lock` key of the Macbook Pro will remain lit.
+This setup does not require using the keyboard control panel to change the modifier keys. Instead, we'll use `hidutil` to change the mapping of `Caps Lock` to `F18`. We'll then use [Hammerspoon](https://hammerspoon.org) to interpret `F18` as `hyper` (`shift` + `ctrl` + `option` + `command`) when pressed with other keys, and `escape` when pressed and released alone. This is accomplished using [launchd](https://www.launchd.info). The keymapping is set in `Library/LaunchAgents/com.local.KeyRemapping.plist`, can be [generated](https://hidutil-generator.netlify.app), and should have been acitivated if you followed the steps above. One side effect here is that the light on the `Caps Lock` key of the Macbook Pro will remain lit.
 
 Next, you'll need to install hammerspoon:
 
