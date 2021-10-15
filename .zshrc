@@ -133,6 +133,23 @@ test -e "jira" && eval "$(jira --completion-script-zsh)"
 # brew install fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# corrects your previous console command
+eval $(thefuck --alias)
+
+# compose-scripts
+if [ -d "$HOME/Development/compose" ]; then
+  export TANIUM_COMPOSE_PATH="$HOME/Development/compose"
+fi
+
+# pyenv
+# assumes that pyenv has already been initialized in .zprofile
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init --path)"
+if type "pyenv" > /dev/null; then
+  eval "$(pyenv init -)"
+fi
+
 # starship prompt instead of powerlevel9k
 # brew install starship
 eval "$(starship init zsh)"
