@@ -28,9 +28,8 @@ brew cask install iterm2 font-firacode-nerd-font
 ```
 
 ## TODO
-- [ ] iterm2 
-  - [ ] config http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/
-  - [ ] `~/.iterm2_shell_integration.zsh`
+- [x] iterm2 
+  - [x] config
 - [ ] git
   - [ ] aliases
   - [ ] `git-fixup` *https://github.com/keis/git-fixup*
