@@ -1,0 +1,31 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "ctrl+alt+k",
+    "command": "workbench.action.terminal.focusNext"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "workbench.action.terminal.focusPrevious"
+  },
+  {
+    "key": "ctrl+alt+m",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+alt+m",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "git.stageSelectedRanges",
+    "when": "textCompareEditorVisible && editorTextFocus"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "git.unstageSelectedRanges",
+    "when": "textCompareEditorVisible && editorTextFocus"
+  }
+]
