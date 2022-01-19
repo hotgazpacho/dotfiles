@@ -152,6 +152,7 @@ fi
 # eval "$(pyenv init --path)"
 if type "pyenv" > /dev/null; then
   eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
 fi
 
 # starship prompt instead of powerlevel9k
