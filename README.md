@@ -35,7 +35,7 @@ brew cask install iterm2 font-firacode-nerd-font
   - [ ] `git-fixup` *https://github.com/keis/git-fixup*
 - [ ] vim
 - [ ] vscode 
-  - [ ] `~/Library/Application\ Support/Code/User/keybindings.json}`
+  - [x] `~/Library/Application\ Support/Code/User/keybindings.json}`
   - [ ] `~/Library/Application\ Support/Code/User/settings.json}`
   - [ ] `~/Library/Application\ Support/Code/User/snippets}`
   - [ ] `~/.vscode/extensions`
