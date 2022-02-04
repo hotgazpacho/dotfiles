@@ -2,11 +2,22 @@
 
 My dotfiles. Note that this assumes macOS with [homebrew](https://brew.sh) already installed.
 
+## Prerequisites
+
+```console
+brew install direnv starship fzf bat rg asdf
+brew cask install iterm2 font-firacode-nerd-font
+asdf plugin add nodejs
+```
+
+## Install
+
 ```console
 git clone --bare git@github.com:hotgazpacho/dotfiles.git $HOME/.dotfiles
 alias dotfiles='$(which git) --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 dotfiles checkout
 dotfiles config --local status.showUntrackedFiles no
+~/bin/iterm2prefs
 launchctl load ~/Library/LaunchAgents/com.local.KeyRemapping.plist
 ```
 
@@ -20,21 +31,15 @@ Next, you'll need to install hammerspoon:
 brew cask install hammerspoon
 ```
 
-## Terminal
-
-```console
-brew install direnv starship fnm fzf
-brew cask install iterm2 font-firacode-nerd-font
-```
-
 ## TODO
-- [x] iterm2 
+
+- [x] iterm2
   - [x] config
 - [ ] git
   - [ ] aliases
   - [ ] `git-fixup` *https://github.com/keis/git-fixup*
 - [ ] vim
-- [ ] vscode 
+- [ ] vscode
   - [x] `~/Library/Application\ Support/Code/User/keybindings.json}`
   - [ ] `~/Library/Application\ Support/Code/User/settings.json}`
   - [ ] `~/Library/Application\ Support/Code/User/snippets}`

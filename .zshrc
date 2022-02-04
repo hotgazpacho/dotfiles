@@ -119,7 +119,12 @@ if [ -d "$HOME/bin" ]; then
 fi
 
 # fnm
-eval "$(fnm env --use-on-cd)"
+#eval "$(fnm env --use-on-cd)"
+
+# asdf
+if whence -p "asdf" &> /dev/null; then
+  . "$(brew --prefix)/opt/asdf/libexec/asdf.sh"
+fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
