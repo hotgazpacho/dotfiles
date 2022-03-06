@@ -1,4 +1,4 @@
-command_timeout = 1000
+command_timeout = 2000
 
 [git_status]
 #format = '([\[$all_status $ahead_behind\]]($style) )'
