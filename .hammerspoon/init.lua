@@ -2,99 +2,58 @@
 local myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon", hs.reload)
 myWatcher:start()
 
-local hyper = require('hyper')
-local caffeine = require('caffeine')
-local wm = require('window-management')
--- local micMute = require('mic-mute')
+hs.loadSpoon("SpoonInstall")
 
+spoon.SpoonInstall.repos.ShiftIt = {
+   url = "https://github.com/peterklijn/hammerspoon-shiftit",
+   desc = "ShiftIt spoon repository",
+   branch = "master",
+}
+
+spoon.SpoonInstall:andUse("ShiftIt", { repo = "ShiftIt" })
+
+local hyperChord = {'cmd','alt','shift','ctrl'}
+local mehChord = {'alt','shift','ctrl'}
+
+spoon.ShiftIt:bindHotkeys({
+   left = {hyperChord, 'left' },
+   right = {hyperChord, 'right' },
+   up = {hyperChord, 'up' },
+   down = {hyperChord, 'down' },
+   upleft = {hyperChord, '1' },
+   upright = {hyperChord, '2' },
+   botleft = {hyperChord, '3' },
+   botright = {hyperChord, '4' },
+   maximum = {hyperChord, 'm' },
+   toggleFullScreen = {hyperChord, 'f' },
+   toggleZoom = {hyperChord, 'z' },
+   center = {hyperChord, 'c' },
+   nextScreen = {hyperChord, 'n' },
+   previousScreen = {hyperChord, 'p' },
+   resizeOut = {hyperChord, '=' },
+   resizeIn = {hyperChord, '-' }
+ }
+)
+
+local caffeine = require('caffeine')
 caffeine:start()
--- micMute:start()
+
+local micMute = require('mic-mute')
+micMute:start()
+
+--local hyper = require('hyper')
 
 -- lock the screen
-hyper:bind({}, "l", function()
-  hs.caffeinate.lockScreen()
-  hyper.triggered = true
+hs.hotkey.bind(mehChord, "L", function()
+   hs.caffeinate.lockScreen()
 end)
 
--- hyper cmd c to toggle preventing the machine from sleeping
-hyper:bind("cmd", "c", function()
-  caffeine.toggle()
-  hyper.triggered = true
+-- toggle preventing the machine from sleeping
+hs.hotkey.bind(mehChord, "c", function()
+   caffeine.toggle()
 end)
 
--- Bind hyper space to toggle the status
--- hyper:bind({}, "space", function()
---  micMute.toggleStatus()
---  hyper.triggered = true
--- end)
-
--- Window Management
-hyper:bind({}, 'left', function()
-  wm.moveWindowToPosition(wm.screenPositions.leftHalf)
-  hyper.triggered = true
-end)
-
-hyper:bind({}, 'right', function()
-  wm.moveWindowToPosition(wm.screenPositions.rightHalf)
-  hyper.triggered = true
-end)
-
-hyper:bind({}, "up", function()
-  wm.moveWindowToPosition(wm.screenPositions.topHalf)
-  hyper.triggered = true
-end)
-
-hyper:bind({}, "down", function()
-  wm.moveWindowToPosition(wm.screenPositions.bottomHalf)
-  hyper.triggered = true
-end)
-
-hyper:bind('cmd', 'left', function()
-  wm.moveWindowToPosition(wm.screenPositions.leftTwoThirds)
-  hyper.triggered = true
-end)
-
-hyper:bind('cmd', 'right', function()
-  wm.moveWindowToPosition(wm.screenPositions.rightTwoThirds)
-  hyper.triggered = true
-end)
-
-hyper:bind('alt', 'left', function()
-  wm.moveWindowToPosition(wm.screenPositions.leftThird)
-  hyper.triggered = true
-end)
-
-hyper:bind('alt', 'right', function()
-  wm.moveWindowToPosition(wm.screenPositions.rightThird)
-  hyper.triggered = true
-end)
-
-hyper:bind({}, "return", function()
-  wm.toggleFullscreen()
-  hyper.triggered = true
-end)
-
-hyper:bind('shift', "return", function()
-  wm.moveWindowToPosition(wm.screenPositions.centered)
-  hyper.triggered = true
-end)
-
-hyper:bind('shift', 'up', function()
-  hs.window.focusedWindow():moveOneScreenNorth()
-  hyper.triggered = true
-end)
-
-hyper:bind('shift', 'down', function()
-  hs.window.focusedWindow():moveOneScreenSouth()
-  hyper.triggered = true
-end)
-
-hyper:bind('shift', 'left', function()
-  hs.window.focusedWindow():moveOneScreenEast()
-  hyper.triggered = true
-end)
-
-hyper:bind('shift', 'right', function()
-  hs.window.focusedWindow():moveOneScreenWest()
-  hyper.triggered = true
+-- toggle mice mute
+hs.hotkey.bind(mehChord, "m", function()
+   micMute.toggleStatus()
 end)
