@@ -4,16 +4,6 @@
 <dict>
 	<key>AlternateMouseScroll</key>
 	<true/>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
 	<key>AutoCommandHistory</key>
 	<false/>
 	<key>Custom Color Presets</key>
@@ -1031,7 +1021,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCodeNerdFontComplete-Retina 15</string>
+			<string>FiraCodeNerdFontComplete-Retina 14</string>
 			<key>Open Password Manager Automatically</key>
 			<false/>
 			<key>Option Key Sends</key>
