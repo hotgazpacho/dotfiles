@@ -163,7 +163,7 @@ fi
 # 1Password CLI autocomplete
 if type "op" > /dev/null; then
   eval "$(op completion zsh)"; compdef _op op
-end
+fi
 
 # starship prompt instead of powerlevel9k
 # brew install starship
