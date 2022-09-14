@@ -160,6 +160,11 @@ if type "pyenv" > /dev/null; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+# 1Password CLI autocomplete
+if type "op" > /dev/null; then
+  eval "$(op completion zsh)"; compdef _op op
+end
+
 # starship prompt instead of powerlevel9k
 # brew install starship
 eval "$(starship init zsh)"
