@@ -27,5 +27,9 @@
     "key": "ctrl+u",
     "command": "git.unstageSelectedRanges",
     "when": "textCompareEditorVisible && editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+t",
+    "command": "workbench.action.terminal.focus"
   }
 ]
