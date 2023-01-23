@@ -143,7 +143,10 @@ export FZF_DEFAULT_OPTS='
   --color info:254,prompt:37,spinner:108,pointer:235,marker:235
 '
 # corrects your previous console command
-eval $(thefuck --alias)
+# brew install thefuck
+if type "thefuck" > /dev/null; then
+  eval $(thefuck --alias);
+fi
 
 # compose-scripts
 if [ -d "$HOME/Development/compose" ]; then
@@ -167,4 +170,18 @@ fi
 
 # starship prompt instead of powerlevel9k
 # brew install starship
-eval "$(starship init zsh)"
+if type "starship" > /dev/null; then
+  eval "$(starship init zsh)";
+fi
+
+# zoxide is a smarter cd command
+# brew install zoxide
+if type "zoxide" > /dev/null; then
+  eval "$(zoxide init zsh)";
+fi
+
+# direnv support for asdf
+ASDF_DIRENV_ZSHRC="${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+if [[ -f "$ASDF_DIRENV_ZSHRC" ]]; then
+  source "$ASDF_DIRENV_ZSHRC"
+fi
