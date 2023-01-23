@@ -38,8 +38,8 @@ spoon.ShiftIt:bindHotkeys({
 local caffeine = require('caffeine')
 caffeine:start()
 
-local micMute = require('mic-mute')
-micMute:start()
+-- local micMute = require('mic-mute')
+-- micMute:start()
 
 --local hyper = require('hyper')
 
