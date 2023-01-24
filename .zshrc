@@ -153,11 +153,6 @@ if type "thefuck" > /dev/null; then
   eval $(thefuck --alias);
 fi
 
-# compose-scripts
-if [ -d "$HOME/Development/compose" ]; then
-  export TANIUM_COMPOSE_PATH="$HOME/Development/compose"
-fi
-
 # pyenv
 # assumes that pyenv has already been initialized in .zprofile
 # export PYENV_ROOT="$HOME/.pyenv"
