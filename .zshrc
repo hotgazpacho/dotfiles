@@ -173,6 +173,9 @@ if type "op" > /dev/null; then
   eval "$(op completion zsh)"; compdef _op op
 fi
 
+# 1Password shell plugins
+test -e "${HOME}/.op/plugins.sh" && source "${HOME}/.op/plugins.sh"
+
 # starship prompt instead of powerlevel9k
 # brew install starship
 if type "starship" > /dev/null; then
