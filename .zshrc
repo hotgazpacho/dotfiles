@@ -118,6 +118,11 @@ if [ -d "$HOME/bin" ]; then
   export PATH="$HOME/bin:$PATH"
 fi
 
+# Adds ~/.local/bin to the path if the directory exits
+if [ -d "$HOME/.local/bin" ]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
 # fnm
 #eval "$(fnm env --use-on-cd)"
 
