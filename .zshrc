@@ -109,10 +109,6 @@ alias dotfiles="$(which git) --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 export PATH=/usr/local/sbin:$PATH
 
-# Set the GOBIN path
-#export GOBIN=$(go env GOPATH)/bin
-#export PATH="$GOBIN:$PATH"
-
 # Adds ~/bin to the path if the directory exists
 if [ -d "$HOME/bin" ]; then
   export PATH="$HOME/bin:$PATH"
@@ -122,9 +118,6 @@ fi
 if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
-
-# fnm
-#eval "$(fnm env --use-on-cd)"
 
 # asdf
 if whence -p "asdf" &> /dev/null; then
