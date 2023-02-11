@@ -1,0 +1,32 @@
+theme = "solarized_dark"
+
+[editor]
+line-number = "absolute"
+mouse = true
+cursorline = true
+cursorcolumn = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+character = "▏"
+
+[keys.normal]
+# On my Moonlander, my fingers naturally rest on these keys
+# so shift the directional keys one to the right
+j = "move_char_left"
+k = "move_line_down"
+l = "move_line_up"
+";" = "move_char_right"
+
+[keys.select]
+# On my Moonlander, my fingers naturally rest on these keys
+# so shift the directional keys one to the right
+j = "extend_char_left"
+k = "extend_line_down"
+l = "extend_line_up"
+";" = "extend_char_right"
