@@ -8,6 +8,10 @@ My dotfiles. Note that this assumes macOS with [homebrew](https://brew.sh) alrea
 brew install direnv starship fzf bat rg asdf
 brew cask install iterm2 font-firacode-nerd-font
 asdf plugin add nodejs
+asdf plugin add golang
+asdf plugin add direnv
+asdf plugin add ruby
+asdf plugin add rust
 ```
 
 ## Install
@@ -19,6 +23,17 @@ dotfiles checkout
 dotfiles config --local status.showUntrackedFiles no
 ~/bin/iterm2prefs
 launchctl load ~/Library/LaunchAgents/com.local.KeyRemapping.plist
+```
+
+## Helix Editor
+Helix has built-in support for LSP-compliant Language Servers. Install a few of the most common ones:
+
+```console
+npm install --global typescript-language-server vscode-langservers-extracted dockerfile-language-server-nodejs nodejs-bash-language-server
+brew install taplo marksman lua-language-server
+go install golang.org/x/tools/gopls@latest
+go install github.com/go=delve/delve/cmd/dlv@latest
+asdf reshim golang
 ```
 
 ## Key Mappings and Bindings
