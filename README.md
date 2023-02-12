@@ -29,7 +29,7 @@ launchctl load ~/Library/LaunchAgents/com.local.KeyRemapping.plist
 Helix has built-in support for LSP-compliant Language Servers. Install a few of the most common ones:
 
 ```console
-npm install --global typescript-language-server vscode-langservers-extracted dockerfile-language-server-nodejs nodejs-bash-language-server
+npm install --global typescript-language-server vscode-langservers-extracted dockerfile-language-server-nodejs bash-language-server
 brew install taplo marksman lua-language-server
 go install golang.org/x/tools/gopls@latest
 go install github.com/go=delve/delve/cmd/dlv@latest
