@@ -2,3 +2,6 @@ typescript-language-server
 vscode-langservers-extracted
 dockerfile-language-server-nodejs 
 bash-language-server
+cspell
+eslint_d
+
