@@ -2,21 +2,22 @@ return {
   -- https://github.com/maxmx03/solarized.nvim
   {
     "maxmx03/solarized.nvim",
-    config = function()
-      local success, solarized = pcall(require, "solarized")
-
-      if not success then
-        return
-      end
-
-      solarized.setup({
-        mode = "dark",
-        theme = "vim",
-        transparnet = true,
-      })
-    end,
+    lazy = false,
+    priority = 1000,
+    opts = {
+      mode = "dark",
+      theme = "neovim",
+      transparent = false,
+      highlights = function(colors, darken, lighten, blend)
+        return {
+          ["@constructor"] = { fg = colors.green },
+          ["@property"] = { fg = colors.base0 },
+          ["@tag"] = { fg = colors.yellow },
+          ["@tag.delimiter"] = { fg = "#586e75" },
+        }
+      end,
+    },
   },
-  -- Configure LazyVim to load solarized
   {
     "LazyVim/LazyVim",
     opts = {
