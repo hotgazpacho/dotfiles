@@ -1,6 +1,7 @@
 return {
   {
     "ray-x/go.nvim",
+    lazy = true,
     requires = { -- optional packages
       "ray-x/guihua.lua",
       "neovim/nvim-lspconfig",
