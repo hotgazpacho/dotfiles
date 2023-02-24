@@ -3,6 +3,11 @@
 -- Add any additional options here
 local opt = vim.opt
 
-opt.cursorcolumn = true -- Enable highlighting of the current column
+if vim.g.vscode then
+  opt.cursorcolumn = false
+  opt.cursorline = false
+else
+  opt.cursorcolumn = true -- Enable highlighting of the current column
+end
 
 opt.hlsearch = false -- Disable highlighting search results
