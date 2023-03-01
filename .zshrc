@@ -60,7 +60,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs node_version rbenv aws)
 # NOTE: yarn-autocompletions and zsh-autosuggestions require installation
 # git clone https://github.com/g-plane/zsh-yarn-autocompletions && zsh-yarn-autocompletions && ./install.sh $ZSH_CUSTOM/plugins
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-plugins=(git node yarn-autocompletions zsh-autosuggestions golang)
+plugins=(git gh node yarn-autocompletions zsh-autosuggestions golang bazel 1password httpie macos)
 
 # Make Homebrew's completions available
 # See https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
