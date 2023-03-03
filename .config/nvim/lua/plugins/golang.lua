@@ -2,7 +2,7 @@ return {
   {
     "ray-x/go.nvim",
     lazy = true,
-    requires = { -- optional packages
+    dependencies = { -- optional packages
       "ray-x/guihua.lua",
       "neovim/nvim-lspconfig",
       "nvim-treesitter/nvim-treesitter",
