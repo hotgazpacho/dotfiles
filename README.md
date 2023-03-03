@@ -9,7 +9,9 @@ brew install direnv\
  starship\
  fzf bat rg fd asdf\
  neovim marksman lazygit gh\
- taplo luacheck markdownlint-cli 
+ taplo luacheck markdownlint-cli\
+ tree-sitter
+brew install --cask wezterm --no-quarantine
 brew cask install iterm2 font-firacode-nerd-font
 asdf plugin add nodejs
 asdf plugin add golang
