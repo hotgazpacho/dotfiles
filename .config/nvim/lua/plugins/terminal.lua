@@ -1,6 +1,7 @@
 return {
   {
     "willothy/flatten.nvim",
+    lazy = false,
     opts = {
       callbacks = {
         pre_open = function()
