@@ -11,3 +11,5 @@ else
 end
 
 opt.hlsearch = false -- Disable highlighting search results
+
+vim.g.loaded_perl_provider = 0
