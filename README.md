@@ -12,7 +12,7 @@ brew install direnv\
  taplo luacheck markdownlint-cli\
  tree-sitter
 brew install --cask wezterm --no-quarantine
-brew cask install iterm2 font-firacode-nerd-font
+brew cask install iterm2 font-fira-code font-symbols-only-nerd-font
 asdf plugin add nodejs
 asdf plugin add golang
 asdf plugin add direnv
