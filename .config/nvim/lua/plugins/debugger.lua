@@ -3,6 +3,17 @@ return {
     "mfussenegger/nvim-dap",
     dependencies = {
       {
+        "jay-babu/mason-nvim-dap.nvim",
+        dependencies = { "nvim-dap" },
+        cmd = { "DapInstall", "DapUninstall" },
+        opts = { automatic_setup = true },
+        config = function(_, opts)
+          local mason_nvim_dap = require("mason-nvim-dap")
+          mason_nvim_dap.setup(opts)
+          mason_nvim_dap.setup_handlers({})
+        end,
+      },
+      {
         "rcarriga/nvim-dap-ui",
         opts = { floating = { border = "rounded" } },
         config = function()
@@ -27,12 +38,6 @@ return {
             types = true,
           },
         },
-      },
-      {
-        "theHamsta/nvim-dap-virtual-text",
-        config = function()
-          require("nvim-dap-virtual-text").setup()
-        end,
       },
     },
   },
