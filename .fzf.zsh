@@ -11,3 +11,7 @@ fi
 # Key bindings
 # ------------
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+
+# Color Theme
+# ------------
+source "${HOME}/.config/base16-fzf/bash/base16-tokyo-night-terminal-storm.config"

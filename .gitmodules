@@ -1,0 +1,3 @@
+[submodule ".config/base16-fzf"]
+	path = .config/base16-fzf
+	url = https://github.com/tinted-theming/base16-fzf
