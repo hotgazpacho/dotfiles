@@ -13,6 +13,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   group = format_sync_grp,
 })
 
+-- TypeScript/JavaScript
+-- EsLintAutoFix on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.ts", "*.tsx", "*.js", "*.jsx" },
+  command = "silent! EslintFixAll",
+  group = vim.api.nvim_create_augroup("TSAutocmds", {}),
+})
+
 -- Terminal keymaps
 vim.api.nvim_create_autocmd({ "TermOpen" }, {
   pattern = "term://*toggleterm#*",
