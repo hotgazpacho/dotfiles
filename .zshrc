@@ -103,6 +103,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vim="nvim"
 alias npx="npx --no-install" # don't install node modules when running npx
 alias yar="yarn"
 alias dotfiles="$(which git) --git-dir=$HOME/.dotfiles --work-tree=$HOME"
@@ -135,6 +136,10 @@ test -e "jira" && eval "$(jira --completion-script-zsh)"
 # https://github.com/junegunn/fzf
 # brew install fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# fzf-git adds fzf capabilities to git commands
+# https://github.com/junegunn/fzf-git.sh
+[ -f ~/fzf-git.sh ] && source ~/fzf-git.sh
 
 # corrects your previous console command
 # brew install thefuck
