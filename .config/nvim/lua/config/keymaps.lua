@@ -32,6 +32,3 @@ if Util.has("toggleterm.nvim") then
   vim.keymap.set("n", "<leader>t<tab>", "<cmd>ToggleTerm direction=tab<cr>", { desc = "ToggleTerm tab" })
   vim.keymap.set("n", "<leader>tn", "<cmd>ToggleTermSetName<cr>", { desc = "Set Terminal Name" })
 end
-
--- Command Palette
-vim.keymap.set("n", "<M-p>", "<cmd>Legendary<cr>", { desc = "Legendary command palette" })
