@@ -4,6 +4,13 @@
 local Util = require("lazyvim.util")
 local wk = require("which-key")
 
+vim.keymap.set("n", "<leader>cg", function()
+  vim.lsp.buf.definition()
+end, { desc = "Go to Definition" })
+vim.keymap.set("n", "<leader>ch", function()
+  vim.lsp.buf.hover()
+end, { desc = "Hover information" })
+
 if Util.has("toggleterm.nvim") then
   wk.register({
     ["<leader>t"] = { name = "+terminal" },
