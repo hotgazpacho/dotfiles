@@ -28,13 +28,14 @@ return {
       window = {
         -- Options:
         -- current        -> open in current window (default)
+        -- alternate      -> open in alternate window (recommended)
         -- tab            -> open in new tab
         -- split          -> open in split
         -- vsplit         -> open in vsplit
         -- current        -> open in current window
         -- func(new_bufs) -> only open the files, allowing you to handle window opening yourself.
         -- Argument is an array of buffer numbers representing the newly opened files.
-        open = "current",
+        open = "alternate",
         -- Affects which file gets focused when opening multiple at once
         -- Options:
         -- "first"        -> open first file of new files (default)
