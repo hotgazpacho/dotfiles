@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 return {
 	font = wezterm.font_with_fallback({
 		"Fira Code",
-		{ family = "Symbols Nerd Font Mono", scale = 0.75 },
+		{ family = "Symbols Nerd Font Mono", scale = 1.0 },
 	}),
 	font_size = 13.0,
 	use_cap_height_to_scale_fallback_fonts = true,
