@@ -4,10 +4,12 @@
 local Util = require("lazyvim.util")
 local wk = require("which-key")
 
-vim.keymap.set("n", "<leader>cg", function()
+vim.keymap.set({ "n", "v" }, "<leader>cg", function()
   vim.lsp.buf.definition()
 end, { desc = "Go to Definition" })
-vim.keymap.set("n", "<leader>ch", function()
+vim.keymap.set({ "n", "v" }, "<leader>cr", "<cmd>Telescope lsp_references<cr>", { desc = "References" })
+vim.keymap.set({ "n", "v" }, "<leader>ci", "<cmd>Telescope lsp_incoming_calls<cr>", { desc = "Incoming Calls" })
+vim.keymap.set({ "", "v" }, "<leader>ch", function()
   vim.lsp.buf.hover()
 end, { desc = "Hover information" })
 
