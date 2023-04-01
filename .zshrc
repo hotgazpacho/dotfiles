@@ -107,6 +107,7 @@ alias vim="nvim"
 alias npx="npx --no-install" # don't install node modules when running npx
 alias yar="yarn"
 alias dotfiles="$(which git) --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias ldotfiles="$(which lazygit) --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 export PATH=/usr/local/sbin:$PATH
 
