@@ -1,0 +1,20 @@
+customCommands:
+  - command: "git cz c"
+    context: "files"
+    description: "commit with commitizen"
+    key: "C"
+    loadingText: "opening commitizen commit tool"
+    subprocess: true
+  - command: "gh browse"
+    context: "files"
+    description: "Browse the repository on GitHub"
+    key: "b"
+  - command: 'gh browse "{{.SelectedLocalCommit.Sha}}"'
+    context: "commits"
+    description: "Browse the commit on GitHub"
+    key: "b"
+gui:
+  paging:
+    colorArg: always
+    pager: delata --dark --paging=never
+    useConfig: false

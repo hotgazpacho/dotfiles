@@ -7,10 +7,11 @@ My dotfiles. Note that this assumes macOS with [homebrew](https://brew.sh) alrea
 ```console
 brew install direnv\
  starship\
- fzf bat rg fd asdf\
- neovim marksman lazygit gh\
+ fzf bat rg fd asdf delta\
+ marksman lazygit gh\
  taplo luacheck markdownlint-cli\
  tree-sitter
+brew install --head neovim
 brew install --cask wezterm --no-quarantine
 brew cask install iterm2 font-fira-code font-symbols-only-nerd-font
 asdf plugin add nodejs
@@ -66,12 +67,8 @@ brew cask install hammerspoon
 
 - [x] iterm2
   - [x] config
+- [x] wezterm
 - [ ] git
   - [ ] aliases
   - [ ] `git-fixup` *https://github.com/keis/git-fixup*
-- [ ] vim
-- [ ] vscode
-  - [x] `~/Library/Application\ Support/Code/User/keybindings.json}`
-  - [ ] `~/Library/Application\ Support/Code/User/settings.json}`
-  - [ ] `~/Library/Application\ Support/Code/User/snippets}`
-  - [ ] `~/.vscode/extensions`
+- [x] neovim
