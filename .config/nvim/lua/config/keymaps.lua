@@ -21,15 +21,10 @@ if Util.has("toggleterm.nvim") then
   vim.keymap.set(
     "n",
     "<leader>th",
-    "<cmd>ToggleTerm size=10 direction=horizontal<cr>",
+    "<cmd>ToggleTerm direction=horizontal<cr>",
     { desc = "ToggleTerm horizontal split" }
   )
-  vim.keymap.set(
-    "n",
-    "<leader>tv",
-    "<cmd>ToggleTerm size=80 direction=vertical<cr>",
-    { desc = "ToggleTerm vertical split" }
-  )
+  vim.keymap.set("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>", { desc = "ToggleTerm vertical split" })
   vim.keymap.set("n", "<leader>ta", "<cmd>ToggleTermToggleAll<cr>", { desc = "ToggleTerm all at once" })
   vim.keymap.set("n", "<leader>t<tab>", "<cmd>ToggleTerm direction=tab<cr>", { desc = "ToggleTerm tab" })
   vim.keymap.set("n", "<leader>tn", "<cmd>ToggleTermSetName<cr>", { desc = "Set Terminal Name" })

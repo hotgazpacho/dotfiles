@@ -47,15 +47,19 @@ return {
   {
     "akinsho/toggleterm.nvim",
     cmd = { "ToggleTerm", "TermExec" },
+    keys = {
+      { [[C-\]], "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
+    },
     opts = {
       -- size can be a number or function which is passed the current terminal
       size = function(term)
         if term.direction == "horizontal" then
-          return 10
+          return 15
         elseif term.direction == "vertical" then
-          return vim.o.columns * 0.4
+          return vim.o.columns * 0.3
         end
       end,
+      shade_terminals = false,
       open_mapping = [[<C-\>]],
       shading_factor = 2,
       direction = "vertical",
@@ -64,9 +68,9 @@ return {
         highlights = { border = "Normal", background = "Normal" },
       },
       winbar = {
-        enabled = false,
-        name_formatter = function(term) --  term: Terminal
-          return term.name
+        enabled = true,
+        name_formatter = function(term)
+          return string.format("%d:%s", term.id, term:_display_name())
         end,
       },
     },
