@@ -10,6 +10,17 @@ return {
           require("telescope").load_extension("fzf")
         end,
       },
+      {
+        "sudormrfbin/cheatsheet.nvim",
+        config = true,
+        keys = {
+          {
+            "<leader>C",
+            "<cmd>Cheatsheet<cr>",
+            desc = "Cheatsheet",
+          },
+        },
+      },
     },
   },
   {
