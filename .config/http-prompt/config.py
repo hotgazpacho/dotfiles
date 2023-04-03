@@ -3,7 +3,7 @@
 # fruity, igor, lovelace, manni, monokai, murphy, native, paraiso-dark,
 # paraiso-light, pastie, perldoc, rrt, solarized, tango, trac, vim, vs, xcode.
 # Preview themes at http://http-prompt.com/themes
-command_style = 'solarized'
+command_style = 'native'
 
 # Highlighting style for HTTPie's output. Available values are the same as
 # command_style. Set this to None to use HTTPie's default style, which you
@@ -23,4 +23,4 @@ set_cookies = 'auto'
 # Enable Vi editor mode? Available values: True / False.
 # When Vi mode is enabled, you use Vi-like keybindings to edit your commands.
 # When it is disabled, you use Emacs keybindings.
-vi = False
+vi = True
