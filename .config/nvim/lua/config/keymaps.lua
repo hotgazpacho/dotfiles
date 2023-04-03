@@ -66,9 +66,14 @@ end
 -- Keymaps for Octo
 if Util.has("octo.nvim") then
   wk.register({
-    ["<leader>gh"] = { name = "+github" },
-    ["<leader>ghp"] = { name = "+pr" },
+    ["<leader>gb"] = { name = "+github" },
+    ["<leader>gbp"] = { name = "+pullrequest" },
   })
-  vim.keymap.set({ "n", "v" }, "<leader>ghs", "<cmd>Octo search<cr>", { desc = "Search Issues and PRs" })
-  vim.keymap.set({ "n", "v" }, "<leader>ghps", "<cmd>Octo pr search<cr>", { desc = "Search Pull Requests" })
+  vim.keymap.set("n", "<leader>gbs", "<cmd>Octo search<cr>", { desc = "Search" })
+  vim.keymap.set("n", "<leader>gbb", "<cmd>Octo repo browser<cr>", { desc = "open in Browser" })
+  vim.keymap.set("n", "<leader>gbpc", "<cmd>Octo pr checks<cr>", { desc = "Checks status" })
+  vim.keymap.set("n", "<leader>gbps", "<cmd>Octo pr search<cr>", { desc = "Search" })
+  vim.keymap.set("n", "<leader>gbpr", "<cmd>Octo pr ready<cr>", { desc = "Mark draft Ready for Review" })
+  vim.keymap.set("n", "<leader>gbpv", "<cmd>Octo pr browser<cr>", { desc = "View in browser" })
+  vim.keymap.set("n", "<leader>gbpu", "<cmd>Octo pr url<cr>", { desc = "copy URL" })
 end
