@@ -10,8 +10,7 @@ brew install direnv\
  fzf bat rg fd asdf delta\
  marksman lazygit gh\
  taplo luacheck markdownlint-cli\
- tree-sitter
-brew install --head neovim
+ tree-sitter neovim
 brew install --cask wezterm --no-quarantine
 brew cask install iterm2 font-fira-code font-symbols-only-nerd-font
 asdf plugin add nodejs
