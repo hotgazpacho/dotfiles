@@ -6,18 +6,34 @@ return {
     priority = 1001,
     opts = {
       callbacks = {
-        pre_open = function()
-          require("toggleterm").toggle()
-        end,
-        post_open = function(_, winnr)
-          local term = require("toggleterm.terminal").get_last_focused() -- <--- Here
-          if not term or not term:is_float() then
-            term:toggle()
+        post_open = function(bufnr, winnr, ft, is_blocking)
+          if is_blocking then
+            -- Hide the terminal while it's blocking
+            require("toggleterm").toggle(0)
+          else
+            -- If it's a normal file, just switch to its window
+            vim.api.nvim_set_current_win(winnr)
           end
-          api.nvim_set_current_win(winnr)
+
+          -- If the file is a git commit, create one-shot autocmd to delete its buffer on write
+          -- If you just want the toggleable terminal integration, ignore this bit
+          if ft == "gitcommit" then
+            vim.api.nvim_create_autocmd("BufWritePost", {
+              buffer = bufnr,
+              once = true,
+              callback = function()
+                -- This is a bit of a hack, but if you run bufdelete immediately
+                -- the shell can occasionally freeze
+                vim.defer_fn(function()
+                  vim.api.nvim_buf_delete(bufnr, {})
+                end, 50)
+              end,
+            })
+          end
         end,
         block_end = function()
-          require("toggleterm").toggle()
+          -- After blocking ends (for a git commit, etc), reopen the terminal
+          require("toggleterm").toggle(0)
         end,
       },
       -- <String, Bool> dictionary of filetypes that should be blocking
