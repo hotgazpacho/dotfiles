@@ -11,6 +11,12 @@ return {
         end,
       },
       {
+        "rcarriga/nvim-notify",
+        config = function()
+          require("telescope").load_extension("notify")
+        end,
+      },
+      {
         "sudormrfbin/cheatsheet.nvim",
         config = true,
         keys = {
