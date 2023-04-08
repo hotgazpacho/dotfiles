@@ -17,3 +17,11 @@ vim.g.loaded_perl_provider = 0
 -- Rulers
 opt.ruler = true
 opt.colorcolumn = "100"
+
+-- Folding
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldenable = false -- don't fild everything by default
+opt.foldcolumn = "auto:3"
+opt.foldminlines = 5
+opt.fillchars = opt.fillchars + "foldopen:󰛲,foldclose:󰜄"
