@@ -4,6 +4,8 @@
 local Util = require("lazyvim.util")
 local wk = require("which-key")
 
+vim.keymap.set("i", "jk", "<Esc>", { desc = "Return to normal mode" })
+
 vim.keymap.set({ "n", "v" }, "<leader>cg", function()
   vim.lsp.buf.definition()
 end, { desc = "Go to Definition" })
