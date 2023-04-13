@@ -10,6 +10,9 @@ else
   opt.cursorcolumn = true -- Enable highlighting of the current column
 end
 
+-- Title
+opt.title = true
+
 opt.hlsearch = false -- Disable highlighting search results
 
 vim.g.loaded_perl_provider = 0
