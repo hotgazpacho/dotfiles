@@ -72,3 +72,9 @@ if Util.has("octo.nvim") then
   vim.keymap.set("n", "<leader>gbpv", "<cmd>Octo pr browser<cr>", { desc = "View in browser" })
   vim.keymap.set("n", "<leader>gbpu", "<cmd>Octo pr url<cr>", { desc = "copy URL" })
 end
+
+-- neoclip
+vim.keymap.set("n", "<leader>sy", "<cmd>Telescope neoclip unnamed<cr>", { desc = "Clipboard (default register)" })
+vim.keymap.set("n", '<leader>s"', "<cmd>Telescope neoclip unnamed<cr>", { desc = 'Clipboard (" register)' })
+vim.keymap.set("n", "<leader>s*", "<cmd>Telescope neoclip star<cr>", { desc = "Clipboard (* register)" })
+vim.keymap.set("n", "<leader>s+", "<cmd>Telescope neoclip plus<cr>", { desc = "Clipboard (+ register)" })
