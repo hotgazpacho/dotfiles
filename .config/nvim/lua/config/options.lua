@@ -28,3 +28,5 @@ opt.foldenable = false -- don't fild everything by default
 opt.foldcolumn = "auto:3"
 opt.foldminlines = 5
 opt.fillchars = opt.fillchars + "foldopen:󰛲,foldclose:󰜄"
+
+opt.exrc = true
