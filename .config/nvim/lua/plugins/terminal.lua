@@ -1,11 +1,26 @@
 return {
   {
     "willothy/flatten.nvim",
-    -- Ensure that it runs first to minimize delay when opening file from terminal
+    config = true,
     lazy = false,
     priority = 1001,
     opts = {
+      window = {
+        open = "alternate",
+      },
       callbacks = {
+        should_block = function(argv)
+          -- Note that argv contains all the parts of the CLI command, including
+          -- Neovim's path, commands, options and files.
+          -- See: :help v:argv
+
+          -- In this case, we would block if we find the `-b` flag
+          -- This allows you to use `nvim -b file1` instead of `nvim --cmd 'let g:flatten_wait=1' file1`
+          return vim.tbl_contains(argv, "-b")
+
+          -- Alternatively, we can block if we find the diff-mode option
+          -- return vim.tbl_contains(argv, "-d")
+        end,
         post_open = function(bufnr, winnr, ft, is_blocking)
           if is_blocking then
             -- Hide the terminal while it's blocking
@@ -35,28 +50,6 @@ return {
           -- After blocking ends (for a git commit, etc), reopen the terminal
           require("toggleterm").toggle(0)
         end,
-      },
-      -- <String, Bool> dictionary of filetypes that should be blocking
-      block_for = {
-        gitcommit = true,
-      },
-      -- Window options
-      window = {
-        -- Options:
-        -- current        -> open in current window (default)
-        -- alternate      -> open in alternate window (recommended)
-        -- tab            -> open in new tab
-        -- split          -> open in split
-        -- vsplit         -> open in vsplit
-        -- current        -> open in current window
-        -- func(new_bufs) -> only open the files, allowing you to handle window opening yourself.
-        -- Argument is an array of buffer numbers representing the newly opened files.
-        open = "alternate",
-        -- Affects which file gets focused when opening multiple at once
-        -- Options:
-        -- "first"        -> open first file of new files (default)
-        -- "last"         -> open last file of new files
-        focus = "first",
       },
     },
   },
