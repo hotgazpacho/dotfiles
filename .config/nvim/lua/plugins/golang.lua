@@ -3,12 +3,19 @@ return {
     "ray-x/go.nvim",
     lazy = true,
     dependencies = { -- optional packages
+      "mfussenegger/nvim-dap",
       "ray-x/guihua.lua",
       "neovim/nvim-lspconfig",
       "nvim-treesitter/nvim-treesitter",
     },
-    config = function()
-      require("go").setup()
+    opts = {
+      dap_debug = true,
+      dap_debug_keymap = false,
+      trouble = true,
+      luasnip = true,
+    },
+    config = function(_, opts)
+      require("go").setup(opts)
     end,
     event = { "CmdlineEnter" },
     ft = { "go", "gomod" },
