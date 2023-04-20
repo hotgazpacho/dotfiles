@@ -1,6 +1,7 @@
 return {
   {
     "jay-babu/mason-nvim-dap.nvim",
+    version = "2.0.1",
     opts = {
       automatic_setup = true,
       ensure_installed = {
