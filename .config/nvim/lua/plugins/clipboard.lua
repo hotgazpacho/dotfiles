@@ -1,11 +1,8 @@
 return {
   {
     "AckslD/nvim-neoclip.lua",
-    lazy = false,
-    config = function(_, opts)
-      require("neoclip").setup(opts)
-      require("telescope").load_extension("neoclip")
-    end,
+    event = { "TextYankPost" },
+    opts = {},
     keys = {
       { "<leader>sy", "<cmd>Telescope neoclip unnamed<cr>", desc = "Clipboard (default register)" },
       { '<leader>s"', "<cmd>Telescope neoclip unnamed<cr>", desc = 'Clipboard (" register)' },

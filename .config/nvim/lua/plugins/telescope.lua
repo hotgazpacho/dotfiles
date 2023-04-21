@@ -11,6 +11,13 @@ return {
         end,
       },
       {
+        "AckslD/nvim-neoclip.lua",
+        config = function(_, opts)
+          require("neoclip").setup(opts)
+          require("telescope").load_extension("neoclip")
+        end,
+      },
+      {
         "nvim-telescope/telescope-dap.nvim",
         config = function()
           require("telescope").load_extension("dap")
