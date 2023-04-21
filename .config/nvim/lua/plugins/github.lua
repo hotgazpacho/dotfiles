@@ -41,13 +41,9 @@ return {
   {
     "ruifm/gitlinker.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = function()
-      local opts = require("gitlinker.opts").get()
-      local hosts = require("gitlinker.hosts")
-      opts.callbacks = hosts.callbacks
-      opts.mappings = nil
-      return opts
-    end,
+    opts = {
+      mappings = nil,
+    },
     keys = {
       {
         "<leader>gy",
