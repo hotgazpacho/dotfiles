@@ -10,7 +10,10 @@ return {
     },
     opts = {
       dap_debug = true,
-      dap_debug_keymap = false,
+      dap_debug_gui = true,
+      dap_debug_keymap = true,
+      dap_debug_vt = true,
+      icons = false,
       trouble = true,
       luasnip = true,
     },
