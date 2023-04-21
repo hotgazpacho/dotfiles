@@ -8,9 +8,3 @@ vim.keymap.set({ "n", "v" }, "<leader>cg", function()
 end, { desc = "Go to Definition" })
 vim.keymap.set({ "n", "v" }, "<leader>cr", "<cmd>Telescope lsp_references<cr>", { desc = "References" })
 vim.keymap.set({ "n", "v" }, "<leader>ci", "<cmd>Telescope lsp_incoming_calls<cr>", { desc = "Incoming Calls" })
-
--- neoclip
-vim.keymap.set("n", "<leader>sy", "<cmd>Telescope neoclip unnamed<cr>", { desc = "Clipboard (default register)" })
-vim.keymap.set("n", '<leader>s"', "<cmd>Telescope neoclip unnamed<cr>", { desc = 'Clipboard (" register)' })
-vim.keymap.set("n", "<leader>s*", "<cmd>Telescope neoclip star<cr>", { desc = "Clipboard (* register)" })
-vim.keymap.set("n", "<leader>s+", "<cmd>Telescope neoclip plus<cr>", { desc = "Clipboard (+ register)" })
