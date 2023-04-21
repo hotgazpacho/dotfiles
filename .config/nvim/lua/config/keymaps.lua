@@ -11,26 +11,6 @@ vim.keymap.set({ "n", "v" }, "<leader>cg", function()
 end, { desc = "Go to Definition" })
 vim.keymap.set({ "n", "v" }, "<leader>cr", "<cmd>Telescope lsp_references<cr>", { desc = "References" })
 vim.keymap.set({ "n", "v" }, "<leader>ci", "<cmd>Telescope lsp_incoming_calls<cr>", { desc = "Incoming Calls" })
-vim.keymap.set({ "", "v" }, "<leader>ch", function()
-  vim.lsp.buf.hover()
-end, { desc = "Hover information" })
-
-if Util.has("toggleterm.nvim") then
-  wk.register({
-    ["<leader>t"] = { name = "+terminal" },
-  })
-  vim.keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", { desc = "ToggleTerm float" })
-  vim.keymap.set(
-    "n",
-    "<leader>th",
-    "<cmd>ToggleTerm direction=horizontal<cr>",
-    { desc = "ToggleTerm horizontal split" }
-  )
-  vim.keymap.set("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>", { desc = "ToggleTerm vertical split" })
-  vim.keymap.set("n", "<leader>ta", "<cmd>ToggleTermToggleAll<cr>", { desc = "ToggleTerm all at once" })
-  vim.keymap.set("n", "<leader>t<tab>", "<cmd>ToggleTerm direction=tab<cr>", { desc = "ToggleTerm tab" })
-  vim.keymap.set("n", "<leader>tn", "<cmd>ToggleTermSetName<cr>", { desc = "Set Terminal Name" })
-end
 
 -- Git keymaps
 if Util.has("gitlinker.nvim") then

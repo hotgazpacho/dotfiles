@@ -55,9 +55,25 @@ return {
   },
   {
     "akinsho/toggleterm.nvim",
+    dependencies = {
+      {
+        "folke/which-key.nvim",
+        opts = {
+          defaults = {
+            ["<leader>e"] = { name = "+terminal" },
+          },
+        },
+      },
+    },
     cmd = { "ToggleTerm", "TermExec" },
     keys = {
-      { [[C-\]], "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
+      { [[C\]], "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
+      { "<leader>ef", "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
+      { "<leader>eh", "<cmd>ToggleTerm direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
+      { "<leader>ev", "<cmd>ToggleTerm direction=vertical<cr>", desc = "ToggleTerm vertical split" },
+      { "<leader>e<tab>", "<cmd>ToggleTerm direction=tab<cr>", desc = "ToggleTerm tab" },
+      { "<leader>ea", "<cmd>ToggleTermToggleAll<cr>", desc = "ToggleTerm all at once" },
+      { "<leader>en", "<cmd>ToggleTermSetName<cr>", desc = "Set Terminal Name" },
     },
     opts = {
       -- size can be a number or function which is passed the current terminal
