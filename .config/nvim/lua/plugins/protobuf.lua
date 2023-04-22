@@ -1,4 +1,10 @@
 return {
+  {
+    "williamboman/mason.nvim",
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed, { "buf", "buf-language-server" })
+    end,
+  },
   -- add proto to treesitter
   {
     "nvim-treesitter/nvim-treesitter",
@@ -23,6 +29,7 @@ return {
     "jose-elias-alvarez/null-ls.nvim",
     opts = function(_, opts)
       table.insert(opts.sources, require("null-ls.builtins.diagnostics.buf"))
+      table.insert(opts.sources, require("null-ls.builtins.formatting.buf"))
     end,
   },
 }
