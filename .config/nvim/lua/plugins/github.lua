@@ -1,5 +1,11 @@
 return {
   {
+    "jose-elias-alvarez/null-ls.nvim",
+    opts = function(_, opts)
+      table.insert(opts.sources, require("null-ls.builtins.diagnostics.commitlint"))
+    end,
+  },
+  {
     "pwntester/octo.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
