@@ -30,3 +30,6 @@ opt.foldminlines = 5
 opt.fillchars = opt.fillchars + "foldopen:󰛲,foldclose:󰜄"
 
 opt.exrc = true
+
+-- python setup
+vim.g.python3_host_prog = vim.fs.normalize("~/.pyenv/versions/neovim3/bin/python")
