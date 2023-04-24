@@ -1,0 +1,42 @@
+[pager]
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
+[delta]
+  syntax-theme = base16
+	line-numbers = true
+	side-by-side = true
+  navigate = true
+[interactive]
+  diffFilter = delta --color-only
+[merge]
+  tool = nvimdiff
+  conflictstyle = diff3
+[mergetool]
+	keepBackup = false
+[mergetool "nvimdiff"]
+  cmd = nvim -d \"$LOCAL\" \"$MERGED\" \"$BASE\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd J\"
+[mergetool "code"]
+	cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[diff]
+  tool = nvimdiff
+[difftool "nvimdiff"]
+  cmd = nvim -d -R \"$LOCAL\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd L\"
+[difftool "code"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[rebase]
+	autosquash = true
+[push]
+	default = current
+  autoSetupRemote = true
+[alias]
+  amend = commit --amend
+  co = checkout
+  cob = checkout -b
+  ; use fzf to interactively pick a branch to checkout
+  coi = "!git checkout $(git branch --all --sort=-committerdate | fzf | tr -d '[:space:]')"
+  ; use fzf to interactively pick a commit to fixup
+  fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+  pushf = push --force-with-lease
+  st = status --short --branch
