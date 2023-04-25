@@ -1,0 +1,24 @@
+// packages required by ray-x/go for neovim
+mvdan.cc/gofumpt
+github.com/segmentio/golines
+github.com/golangci/golangci-lint/cmd/golangci-lint
+golang.org/x/tools/cmd/goimports
+golang.org/x/tools/cmd/gorename
+github.com/fatih/gomodifytags
+golang.org/x/tools/gopls
+github.com/cweill/gotests/...
+github.com/koron/iferr
+golang.org/x/tools/cmd/callgraph
+golang.org/x/tools/cmd/guru
+github.com/josharian/impl
+github.com/davidrjenni/reftools/cmd/fillstruct
+github.com/davidrjenni/reftools/cmd/fillswitch
+github.com/go-delve/delve/cmd/dlv
+github.com/onsi/ginkgo/v2/ginkgo
+github.com/kyoh86/richgo
+gotest.tools/gotestsum
+github.com/golang/mock/mockgen
+github.com/tmc/json-to-struct
+github.com/abenz1267/gomvp
+golang.org/x/vuln/cmd/govulncheck
+github.com/abice/go-enum
