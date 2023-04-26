@@ -19,6 +19,12 @@ return {
           require("neotest-go"),
           require("neotest-jest"),
         },
+        status = {
+          -- disable the status consumer until https://github.com/nvim-neotest/neotest-go/issues/6 is fixed
+          enabled = false,
+          signs = false,
+          virtual_text = false,
+        },
       }
     end,
     config = function(_, opts)
