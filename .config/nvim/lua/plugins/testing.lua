@@ -25,6 +25,18 @@ return {
           signs = false,
           virtual_text = false,
         },
+        consumers = {
+          notify = function(client)
+            client.listeners.results = function(adapter_id, results, partial)
+              -- Partial results can be very frequent
+              if partial then
+                return
+              end
+              require("neotest.lib").notify("Tests completed")
+            end
+            return {}
+          end,
+        },
       }
     end,
     config = function(_, opts)
