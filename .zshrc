@@ -103,11 +103,15 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim="nvim"
 alias npx="npx --no-install" # don't install node modules when running npx
 alias yar="yarn"
 alias dotfiles="$(which git) --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias ldotfiles="$(which lazygit) --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias ls="lsd"
+alias ll="lsd --almost-all --long"
+alias llm="lsd --timesort --long"
+alias lS="lsd --oneline --classic"
+alias lt="lsd --tree --depth=2"
 
 export PATH=/usr/local/sbin:$PATH
 
