@@ -4,4 +4,5 @@ dockerfile-language-server-nodejs
 bash-language-server
 cspell
 eslint_d
-
+@commitlint/cli
+@commitlint/config-conventional
