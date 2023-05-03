@@ -187,3 +187,7 @@ ASDF_DIRENV_ZSHRC="${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 if [[ -f "$ASDF_DIRENV_ZSHRC" ]]; then
   source "$ASDF_DIRENV_ZSHRC"
 fi
+
+# gpg
+GPG_TTY=$(tty)
+export GPG_TTY
