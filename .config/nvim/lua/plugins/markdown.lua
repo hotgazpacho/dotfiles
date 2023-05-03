@@ -21,4 +21,5 @@ return {
       table.insert(opts.sources, require("null-ls.builtins.formatting.markdownlint"))
     end,
   },
+  { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 }
