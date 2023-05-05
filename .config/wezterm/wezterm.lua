@@ -58,6 +58,12 @@ local process_icons = {
 	["gh"] = {
 		{ Text = wezterm.nerdfonts.dev_github_badge },
 	},
+	["python"] = {
+		{ Text = wezterm.nerdfonts.dev_python },
+	},
+	["python3"] = {
+		{ Text = wezterm.nerdfonts.dev_python },
+	},
 	["ruby"] = {
 		{ Text = wezterm.nerdfonts.dev_ruby },
 	},
