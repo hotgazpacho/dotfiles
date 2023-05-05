@@ -58,6 +58,9 @@ local process_icons = {
 	["gh"] = {
 		{ Text = wezterm.nerdfonts.dev_github_badge },
 	},
+	["ruby"] = {
+		{ Text = wezterm.nerdfonts.dev_ruby },
+	},
 }
 
 local function get_current_working_dir(tab)
