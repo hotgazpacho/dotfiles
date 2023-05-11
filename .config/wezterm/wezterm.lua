@@ -97,10 +97,11 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	end
 
 	local title = string.format(
-		" %s  %s ~ %s  ",
+		" %s  %s ~ %s  ⌘%d ",
 		wezterm.nerdfonts.fa_chevron_right,
 		get_process(tab),
-		get_current_working_dir(tab)
+		get_current_working_dir(tab),
+		tab.tab_index + 1
 	)
 
 	if has_unseen_output then
