@@ -77,6 +77,12 @@ if whence -p "direnv" &> /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
+# XDG Base Directory specification https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+# Only set some of these, as it may have impact
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
