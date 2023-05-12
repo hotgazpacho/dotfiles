@@ -1,4 +1,8 @@
 customCommands:
+  - command: "gh pr create --fill --web"
+    context: "global"
+    key: "<c-r>"
+    loadingText: "Creating pull request on GitHub"
   - command: "git cz c"
     context: "files"
     description: "commit with commitizen"
@@ -13,8 +17,10 @@ customCommands:
     context: "commits"
     description: "Browse the commit on GitHub"
     key: "b"
-gui:
+git:
   paging:
     colorArg: always
-    pager: delata --dark --paging=never
+    pager: delta --dark --paging=never
     useConfig: false
+gui:
+  showIcons: true
