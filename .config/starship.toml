@@ -1,10 +1,12 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
 command_timeout = 2000
 
 [git_status]
 #format = '([\[$all_status $ahead_behind\]]($style) )'
 ahead = "⇡${count}"
-diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+diverged = "󰃻⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
 up_to_date = "✓"
-untracked = "🤷‍"
+untracked = "🤷"
 staged = '[++\($count\)](green)'
