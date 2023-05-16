@@ -38,17 +38,9 @@ return {
     "jay-babu/mason-nvim-dap.nvim",
     opts = {
       automatic_setup = true,
-      ensure_installed = {
-        "js-debug-adapter",
-        "delve",
-      },
+      opts = function(_, opts)
+        vim.list_extend(opts.ensure_installed, { "delve" })
+      end,
     },
-  },
-  {
-    "leoluz/nvim-dap-go",
-    dependencies = { "nvim-dap" },
-    config = function(_, opts)
-      require("dap-go").setup(opts)
-    end,
   },
 }

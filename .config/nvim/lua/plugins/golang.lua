@@ -1,5 +1,19 @@
 return {
   {
+    "leoluz/nvim-dap-go",
+    dependencies = { "nvim-dap" },
+    opts = {},
+    event = { "CmdlineEnter" },
+  },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    dependencies = "mason.nvim",
+    cmd = { "DapInstall", "DapUninstall" },
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed, { "delve" })
+    end,
+  },
+  {
     "ray-x/go.nvim",
     lazy = true,
     dependencies = { -- optional packages
@@ -17,9 +31,6 @@ return {
       trouble = true,
       luasnip = true,
     },
-    config = function(_, opts)
-      require("go").setup(opts)
-    end,
     event = { "CmdlineEnter" },
     ft = { "go", "gomod" },
     -- Use :GoInstallBinaries
