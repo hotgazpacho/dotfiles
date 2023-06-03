@@ -65,20 +65,20 @@ return {
         "folke/which-key.nvim",
         opts = {
           defaults = {
-            ["<leader>\\"] = { name = "+terminal" },
+            ["<leader>/"] = { name = "+terminal" },
           },
         },
       },
     },
     cmd = { "ToggleTerm", "TermExec" },
     keys = {
-      { [[<C-\>]], "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
-      { [[<leader>\f]], "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
-      { [[<leader>\h]], "<cmd>ToggleTerm direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
-      { [[<leader>\v]], "<cmd>ToggleTerm direction=vertical<cr>", desc = "ToggleTerm vertical split" },
-      { [[<leader>\<tab>]], "<cmd>ToggleTerm direction=tab<cr>", desc = "ToggleTerm tab" },
-      { [[<leader>\a]], "<cmd>ToggleTermToggleAll<cr>", desc = "ToggleTerm all at once" },
-      { [[<leader>\n]], "<cmd>ToggleTermSetName<cr>", desc = "Set Terminal Name" },
+      { [[<C-/>]], "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
+      { [[<leader>/f]], "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
+      { [[<leader>/h]], "<cmd>ToggleTerm direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
+      { [[<leader>/v]], "<cmd>ToggleTerm direction=vertical<cr>", desc = "ToggleTerm vertical split" },
+      { [[<leader>/<tab>]], "<cmd>ToggleTerm direction=tab<cr>", desc = "ToggleTerm tab" },
+      { [[<leader>/a]], "<cmd>ToggleTermToggleAll<cr>", desc = "ToggleTerm all at once" },
+      { [[<leader>/n]], "<cmd>ToggleTermSetName<cr>", desc = "Set Terminal Name" },
     },
     opts = {
       -- size can be a number or function which is passed the current terminal
@@ -86,11 +86,11 @@ return {
         if term.direction == "horizontal" then
           return 15
         elseif term.direction == "vertical" then
-          return vim.o.columns * 0.3
+          return vim.o.columns * 0.4
         end
       end,
       shade_terminals = false,
-      open_mapping = [[<C-\>]],
+      open_mapping = [[<C-/>]],
       shading_factor = 2,
       direction = "vertical",
       float_opts = {
@@ -98,7 +98,7 @@ return {
         highlights = { border = "Normal", background = "Normal" },
       },
       winbar = {
-        enabled = true,
+        enabled = false,
         name_formatter = function(term)
           return string.format("%d:%s", term.id, term:_display_name())
         end,
