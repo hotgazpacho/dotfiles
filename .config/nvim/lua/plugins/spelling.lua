@@ -80,8 +80,9 @@ return {
         end,
         decode_json = require("json5").parse,
       }
-      table.insert(opts.sources, require("cspell").diagnostics.with({ config = config }))
-      table.insert(opts.sources, require("cspell").code_actions.with({ config = config }))
+      local cspell = require("cspell")
+      table.insert(opts.sources, cspell.diagnostics.with({ config = config }))
+      table.insert(opts.sources, cspell.code_actions.with({ config = config }))
     end,
   },
 }
