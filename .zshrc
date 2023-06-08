@@ -77,6 +77,11 @@ if whence -p "direnv" &> /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
+# WezTerm text decorations
+if [[ -n $WEZTERM_PANE ]]; then
+  export TERM=wezterm
+fi
+
 # XDG Base Directory specification https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 # Only set some of these, as it may have impact
 export XDG_CONFIG_HOME="$HOME/.config"
