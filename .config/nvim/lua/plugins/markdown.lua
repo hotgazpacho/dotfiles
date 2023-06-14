@@ -18,7 +18,6 @@ return {
     "jose-elias-alvarez/null-ls.nvim",
     opts = function(_, opts)
       table.insert(opts.sources, require("null-ls.builtins.diagnostics.markdownlint"))
-      table.insert(opts.sources, require("null-ls.builtins.formatting.markdownlint"))
     end,
   },
   { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
