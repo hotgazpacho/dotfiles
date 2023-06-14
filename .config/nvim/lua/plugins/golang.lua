@@ -1,11 +1,5 @@
 return {
   {
-    "leoluz/nvim-dap-go",
-    dependencies = { "nvim-dap" },
-    opts = {},
-    event = { "CmdlineEnter" },
-  },
-  {
     "jay-babu/mason-nvim-dap.nvim",
     dependencies = "mason.nvim",
     cmd = { "DapInstall", "DapUninstall" },
