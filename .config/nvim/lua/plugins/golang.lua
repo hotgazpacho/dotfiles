@@ -1,13 +1,5 @@
 return {
   {
-    "jay-babu/mason-nvim-dap.nvim",
-    dependencies = "mason.nvim",
-    cmd = { "DapInstall", "DapUninstall" },
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, { "delve" })
-    end,
-  },
-  {
     "ray-x/go.nvim",
     lazy = true,
     dependencies = { -- optional packages
