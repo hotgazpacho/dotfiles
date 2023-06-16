@@ -124,6 +124,12 @@ return {
 	font_size = 13.0,
 	line_height = 1.05,
 	use_cap_height_to_scale_fallback_fonts = true,
+	window_frame = {
+		font = wezterm.font_with_fallback({
+			"Fira Code",
+			{ family = "Symbols Nerd Font Mono", scale = 1.0 },
+		}),
+	},
 	color_scheme = "tokyonight-storm",
 	hide_tab_bar_if_only_one_tab = true,
 	initial_rows = 60,
