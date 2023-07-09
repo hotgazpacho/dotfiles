@@ -11,9 +11,14 @@ brew install direnv\
  fzf bat rg fd asdf delta\
  marksman lazygit gh\
  taplo luacheck markdownlint-cli\
- tree-sitter neovim
+ tree-sitter neovim\
+ font-fira-code font-symbols-only-nerd-fonts
 brew install --cask wezterm --no-quarantine
-brew cask install iterm2 font-fira-code font-symbols-only-nerd-font
+tempfile=$(mktemp) \
+  && curl -o $tempfile https://raw.githubusercontent.com/wez/wezterm/main/termwiz/data/wezterm.terminfo \
+  && tic -x -o ~/.terminfo $tempfile \
+  && rm $tempfile
+brew cask install iterm2
 asdf plugin add nodejs
 asdf plugin add golang
 asdf plugin add direnv
