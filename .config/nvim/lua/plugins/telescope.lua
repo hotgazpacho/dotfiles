@@ -11,13 +11,6 @@ return {
         end,
       },
       {
-        "AckslD/nvim-neoclip.lua",
-        config = function(_, opts)
-          require("neoclip").setup(opts)
-          require("telescope").load_extension("neoclip")
-        end,
-      },
-      {
         "nvim-telescope/telescope-dap.nvim",
         config = function()
           require("telescope").load_extension("dap")
@@ -41,32 +34,28 @@ return {
       },
       {
         "rcarriga/nvim-notify",
-        config = function()
+        config = function(_, opts)
+          require("notify").setup(opts)
           require("telescope").load_extension("notify")
         end,
+        keys = {
+          {
+            "<leader>fN",
+            "<cmd>Telescope notify<cr>",
+            desc = "Notifications",
+          },
+        },
       },
       {
         "sudormrfbin/cheatsheet.nvim",
         config = true,
         keys = {
           {
-            "<leader>C",
+            "<leader>?",
             "<cmd>Cheatsheet<cr>",
             desc = "Cheatsheet",
           },
         },
-      },
-    },
-  },
-  {
-    "nvim-telescope/telescope.nvim",
-    keys = {
-      -- add a keymap to browse plugin files
-      -- stylua: ignore
-      {
-        "<leader>fp",
-        function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
-        desc = "Find Plugin File",
       },
     },
   },

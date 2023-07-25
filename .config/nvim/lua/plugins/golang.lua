@@ -17,7 +17,7 @@ return {
       trouble = true,
       luasnip = true,
     },
-    event = { "CmdlineEnter" },
+    event = { "VeryLazy" },
     ft = { "go", "gomod" },
     -- Use :GoInstallBinaries
     -- build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
