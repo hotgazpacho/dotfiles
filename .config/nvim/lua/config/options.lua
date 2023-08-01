@@ -8,28 +8,27 @@ if vim.g.vscode then
   opt.cursorline = false
 else
   opt.cursorcolumn = true -- Enable highlighting of the current column
-end
+  -- Rulers
+  opt.ruler = true
+  opt.colorcolumn = "100"
 
--- Title
-opt.title = true
+  -- Folding
+  opt.foldmethod = "expr"
+  opt.foldexpr = "nvim_treesitter#foldexpr()"
+  opt.foldenable = false -- don't fild everything by default
+  opt.foldcolumn = "auto:3"
+  opt.foldminlines = 5
+  opt.fillchars = opt.fillchars + "foldopen:󰛲,foldclose:󰜄"
+
+  opt.exrc = true
+
+  -- Title
+  opt.title = true
+end
 
 opt.hlsearch = false -- Disable highlighting search results
 
 vim.g.loaded_perl_provider = 0
-
--- Rulers
-opt.ruler = true
-opt.colorcolumn = "100"
-
--- Folding
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldenable = false -- don't fild everything by default
-opt.foldcolumn = "auto:3"
-opt.foldminlines = 5
-opt.fillchars = opt.fillchars + "foldopen:󰛲,foldclose:󰜄"
-
-opt.exrc = true
 
 -- python setup
 vim.g.python3_host_prog = vim.fs.normalize("~/.pyenv/versions/neovim3/bin/python")
