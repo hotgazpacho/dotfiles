@@ -31,5 +31,25 @@
   {
     "key": "ctrl+alt+t",
     "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "cmd+g g",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        {
+          "command": "workbench.action.terminal.newInActiveWorkspace",
+        },
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "lazygit\u000D"
+          }
+        },
+        {
+          "command": "workbench.action.terminal.moveToEditor"
+        },
+      ]
+    }
   }
 ]
