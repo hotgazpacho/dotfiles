@@ -134,4 +134,5 @@ return {
 	hide_tab_bar_if_only_one_tab = true,
 	initial_rows = 60,
 	initial_cols = 120,
+	native_macos_fullscreen_mode = true,
 }
