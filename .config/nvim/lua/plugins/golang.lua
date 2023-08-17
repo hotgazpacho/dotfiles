@@ -13,12 +13,11 @@ return {
       dap_debug_gui = true,
       dap_debug_keymap = true,
       dap_debug_vt = true,
-      icons = false,
+      icons = { breakpoint = "🧘", currentpos = "🏃" },
       trouble = true,
       luasnip = true,
     },
-    event = { "VeryLazy" },
-    ft = { "go", "gomod" },
+    ft = { "go", "gomod", "gowork" },
     -- Use :GoInstallBinaries
     -- build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
