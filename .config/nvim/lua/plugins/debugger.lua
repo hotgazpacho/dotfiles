@@ -7,6 +7,7 @@ return {
   },
   {
     "mfussenegger/nvim-dap",
+    enabled = not vim.g.vscode,
     config = function()
       require("dap.ext.vscode").json_decode = require("json5").parse
       require("dap.ext.vscode").load_launchjs(nil, {})
@@ -36,6 +37,7 @@ return {
   },
   {
     "jay-babu/mason-nvim-dap.nvim",
+    enabled = not vim.g.vscode,
     opts = {
       automatic_setup = true,
       opts = function(_, opts)

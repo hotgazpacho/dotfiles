@@ -3,8 +3,8 @@ return {
     "ray-x/go.nvim",
     lazy = true,
     dependencies = { -- optional packages
-      "mfussenegger/nvim-dap",
-      "ray-x/guihua.lua",
+      { "mfussenegger/nvim-dap", enabled = not vim.g.vscode },
+      { "ray-x/guihua.lua", enabled = not vim.g.vscode },
       "neovim/nvim-lspconfig",
       "nvim-treesitter/nvim-treesitter",
     },
