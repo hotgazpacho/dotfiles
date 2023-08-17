@@ -1,6 +1,7 @@
 return {
   {
     "willothy/flatten.nvim",
+    enabled = not vim.g.vscode,
     config = true,
     lazy = false,
     priority = 1001,
