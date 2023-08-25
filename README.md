@@ -77,6 +77,10 @@ asdf reshim golang
   ```console
   GH_HOST="" gh extension install dlvhdr/gh-dash
   ```
+- [gh-f](https://github.com/gennaro-tedesco/gh-f)
+  ```console
+  GH_HOST="" gh extension install gennaro-tedesco/gh-f
+  ```
 
 ## Key Mappings and Bindings
 
