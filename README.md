@@ -71,6 +71,13 @@ go install github.com/go=delve/delve/cmd/dlv@latest
 asdf reshim golang
 ```
 
+## GitHub CLI extensions
+
+- [gh-dash](https://github.com/dlvhdr/gh-dash)
+  ```console
+  GH_HOST="" gh extension install dlvhdr/gh-dash
+  ```
+
 ## Key Mappings and Bindings
 
 This setup does not require using the keyboard control panel to change the
