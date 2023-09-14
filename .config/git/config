@@ -20,6 +20,8 @@
 [mergetool "code"]
 	cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
 [diff]
+  mnemonicprefix = true
+  algorithm = patience
   tool = nvimdiff
 [difftool "nvimdiff"]
   cmd = nvim -d -R \"$LOCAL\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd L\"
