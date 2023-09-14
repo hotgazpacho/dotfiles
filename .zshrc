@@ -202,3 +202,7 @@ fi
 # gpg
 GPG_TTY=$(tty)
 export GPG_TTY
+
+# use gpg keys for ssh
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
