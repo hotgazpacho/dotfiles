@@ -24,17 +24,6 @@ return {
           },
         },
       },
-      {
-        "sudormrfbin/cheatsheet.nvim",
-        config = true,
-        keys = {
-          {
-            "<leader>?",
-            "<cmd>Cheatsheet<cr>",
-            desc = "Cheatsheet",
-          },
-        },
-      },
     },
   },
   {
