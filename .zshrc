@@ -141,12 +141,12 @@ if whence -p "asdf" &> /dev/null; then
   . "$(brew --prefix)/opt/asdf/libexec/asdf.sh"
 fi
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 test -e "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # go-jira
-test -e "jira" && eval "$(jira --completion-script-zsh)"
+# test -e "jira" && eval "$(jira --completion-script-zsh)"
 
 # fzf - command-line fuzzy finder
 # https://github.com/junegunn/fzf
