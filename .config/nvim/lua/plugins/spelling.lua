@@ -67,7 +67,7 @@ return {
     dependencies = { "Joakker/lua-json5" },
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     opts = function(_, opts)
       local config = {
         find_json = function(cwd)
