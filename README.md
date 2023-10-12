@@ -9,16 +9,17 @@ already installed.
 brew install direnv\
  starship\
  fzf bat rg fd asdf delta\
- marksman lazygit gh\
- taplo luacheck markdownlint-cli\
- tree-sitter neovim\
- font-fira-code font-symbols-only-nerd-fonts
+ git lazygit gh\
+ marksman taplo luacheck markdownlint-cli tree-sitter\
+ neovim
+brew tap homebrew/cask-fonts
+brew install font-fira-code
+brew install --cask font-symbols-only-nerd-font
 brew install --cask wezterm --no-quarantine
 tempfile=$(mktemp) \
   && curl -o $tempfile https://raw.githubusercontent.com/wez/wezterm/main/termwiz/data/wezterm.terminfo \
   && tic -x -o ~/.terminfo $tempfile \
   && rm $tempfile
-brew cask install iterm2
 asdf plugin add nodejs
 asdf plugin add golang
 asdf plugin add direnv
