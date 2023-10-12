@@ -10,6 +10,7 @@ brew install direnv\
  starship\
  fzf bat rg fd asdf delta\
  git lazygit gh\
+ gnupg pinentry-mac\
  marksman taplo luacheck markdownlint-cli tree-sitter\
  neovim
 brew tap homebrew/cask-fonts
@@ -25,6 +26,7 @@ asdf plugin add golang
 asdf plugin add direnv
 asdf plugin add ruby
 asdf plugin add rust
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## Install
@@ -34,6 +36,8 @@ git clone --bare git@github.com:hotgazpacho/dotfiles.git $HOME/.dotfiles
 alias dotfiles='$(which git) --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 dotfiles checkout
 dotfiles config --local status.showUntrackedFiles no
+dotfiles submodule init
+dotfiles submodule update
 ~/bin/iterm2prefs
 launchctl load ~/Library/LaunchAgents/com.local.KeyRemapping.plist
 ```
