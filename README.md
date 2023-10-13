@@ -9,6 +9,7 @@ already installed.
 brew install direnv\
  starship\
  fzf bat rg fd asdf delta\
+ zsh-autosuggestions\
  git git-delta lazygit gh\
  gnupg pinentry-mac\
  marksman taplo luacheck markdownlint-cli tree-sitter\
