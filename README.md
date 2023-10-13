@@ -8,8 +8,8 @@ already installed.
 ```console
 brew install direnv\
  starship\
- fzf bat rg fd asdf delta\
  zsh-autosuggestions\
+ lsd fzf bat rg fd asdf\
  git git-delta lazygit gh\
  gnupg pinentry-mac\
  marksman taplo luacheck markdownlint-cli tree-sitter\
