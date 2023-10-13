@@ -8,7 +8,7 @@ already installed.
 ```console
 brew install direnv\
  starship\
- zsh-autosuggestions\
+ zsh-autosuggestions zsh-syntax-highlighting\
  lsd fzf bat rg fd asdf\
  git git-delta lazygit gh\
  gnupg pinentry-mac\
