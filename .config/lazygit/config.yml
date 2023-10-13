@@ -21,6 +21,3 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
-    useConfig: false
-gui:
-  showIcons: false # Disable until https://github.com/jesseduffield/lazygit/issues/2603 is fixed
