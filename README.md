@@ -38,6 +38,7 @@ dotfiles checkout
 dotfiles config --local status.showUntrackedFiles no
 dotfiles submodule init
 dotfiles submodule update
+$(brew --prefix)/opt/fzf/install
 ~/bin/iterm2prefs
 launchctl load ~/Library/LaunchAgents/com.local.KeyRemapping.plist
 ```
