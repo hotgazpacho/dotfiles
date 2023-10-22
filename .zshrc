@@ -135,18 +135,16 @@ if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
-# asdf
-if whence -p "asdf" &> /dev/null; then
-  . "$(brew --prefix)/opt/asdf/libexec/asdf.sh"
+# rtx
+if which -p "rtx" &> /dev/null; then
+  eval "$($(brew --prefix)/bin/rtx activate zsh)"
 fi
-export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
-# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
+# zsh-syntax-highlighting
 test -e "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" && source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-# go-jira
-# test -e "jira" && eval "$(jira --completion-script-zsh)"
+# zsh-autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # fzf - command-line fuzzy finder
 # https://github.com/junegunn/fzf
@@ -193,12 +191,6 @@ if type "zoxide" > /dev/null; then
   eval "$(zoxide init zsh)";
 fi
 
-# direnv support for asdf
-ASDF_DIRENV_ZSHRC="${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
-if [[ -f "$ASDF_DIRENV_ZSHRC" ]]; then
-  source "$ASDF_DIRENV_ZSHRC"
-fi
-
 # gpg
 GPG_TTY=$(tty)
 export GPG_TTY
@@ -207,5 +199,3 @@ export GPG_TTY
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
-# zsh-autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
