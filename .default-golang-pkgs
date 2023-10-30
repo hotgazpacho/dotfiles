@@ -22,3 +22,4 @@ github.com/tmc/json-to-struct
 github.com/abenz1267/gomvp
 golang.org/x/vuln/cmd/govulncheck
 github.com/abice/go-enum
+gotest.tools/gotestsum
