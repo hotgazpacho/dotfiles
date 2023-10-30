@@ -116,14 +116,6 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	}
 end)
 
-function scheme_for_appearance(appearance)
-	if appearance:find("Dark") then
-		return "Catppuccin Macchiato"
-	else
-		return "Catppuccin Latte"
-	end
-end
-
 return {
 	font = wezterm.font_with_fallback({
 		"Fira Code",
@@ -138,7 +130,7 @@ return {
 			{ family = "Symbols Nerd Font Mono", scale = 1.0 },
 		}),
 	},
-	color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
+	color_scheme = "Catppuccin Macchiato",
 	hide_tab_bar_if_only_one_tab = true,
 	initial_rows = 60,
 	initial_cols = 120,
