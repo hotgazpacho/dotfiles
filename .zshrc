@@ -167,10 +167,10 @@ fi
 # export PYENV_ROOT="$HOME/.pyenv"
 # export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init --path)"
-if type "pyenv" > /dev/null; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-fi
+#if type "pyenv" > /dev/null; then
+#  eval "$(pyenv init -)"
+#  eval "$(pyenv virtualenv-init -)"
+#fi
 
 # 1Password CLI autocomplete
 if type "op" > /dev/null; then
@@ -200,3 +200,5 @@ export GPG_TTY
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
+# kubectl
+eval "$(kubectl tanium cache alias --skip-update --skip-cache)"
