@@ -59,7 +59,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Add wisely, as too many plugins slow down shell startup.
 # NOTE: yarn-autocompletions requires installation
 # git clone https://github.com/g-plane/zsh-yarn-autocompletions && zsh-yarn-autocompletions && ./install.sh $ZSH_CUSTOM/plugins
-plugins=(git gh node golang bazel 1password httpie macos kubectl)
+plugins=(git gh golang bazel 1password macos kubectl)
 
 # Make Homebrew's completions available
 # See https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
