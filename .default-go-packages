@@ -1,4 +1,3 @@
-// packages required by ray-x/go for neovim
 mvdan.cc/gofumpt
 github.com/segmentio/golines
 github.com/golangci/golangci-lint/cmd/golangci-lint
