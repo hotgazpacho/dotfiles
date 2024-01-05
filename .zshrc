@@ -135,9 +135,9 @@ if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
-# rtx
-if which -p "rtx" &> /dev/null; then
-  eval "$($(brew --prefix)/bin/rtx activate zsh)"
+# rtx, now mise-en-place
+if which -p "mise" &> /dev/null; then
+  eval "$($(brew --prefix)/bin/mise activate zsh)"
 fi
 
 # zsh-syntax-highlighting
