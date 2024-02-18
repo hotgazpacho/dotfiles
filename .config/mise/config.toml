@@ -1,6 +1,6 @@
 [tools]
-go = "1.20.10"
-node = "18.13.0"
+go = "latest"
+node = "latest"
 python = "3.10.4"
 direnv = "latest"
 ruby = "3.1.3"
