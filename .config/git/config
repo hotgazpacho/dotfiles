@@ -5,33 +5,44 @@
   show = delta
 [delta]
   syntax-theme = base16
-	line-numbers = true
-	side-by-side = true
+  line-numbers = true
+  side-by-side = true
   navigate = true
 [interactive]
   diffFilter = delta --color-only
+[branch]
+  sort = -committerdate
 [merge]
   tool = nvimdiff
-  conflictstyle = diff3
+  conflictstyle = zdiff3
 [mergetool]
-	keepBackup = false
+  keepBackup = false
 [mergetool "nvimdiff"]
   cmd = nvim -d \"$LOCAL\" \"$MERGED\" \"$BASE\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd J\"
 [mergetool "code"]
-	cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+  cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
 [diff]
   mnemonicprefix = true
-  algorithm = patience
+  algorithm = histogram
   tool = nvimdiff
+  context = 5
 [difftool "nvimdiff"]
   cmd = nvim -d -R \"$LOCAL\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd L\"
 [difftool "code"]
   cmd = code --wait --diff $LOCAL $REMOTE
 [rebase]
-	autosquash = true
+  autosquash = true
 [push]
-	default = current
+  default = current
   autoSetupRemote = true
+[log]
+  date = iso
+[help]
+  autocorrect = prompt
+[commit]
+  verbose = true
+[init]
+  defaultBranch = main
 [alias]
   amend = commit --amend
   co = checkout
