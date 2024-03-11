@@ -53,3 +53,4 @@
   fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
   pushf = push --force-with-lease
   st = status --short --branch
+  lg = log --oneline --abbrev-commit --all --graph --decorate --color
