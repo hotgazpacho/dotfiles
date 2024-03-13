@@ -8,9 +8,9 @@ return {
   {
     "nvimtools/none-ls.nvim",
     opts = function(_, opts)
+      opts.fallback_severity = vim.diagnostic.severity.INFO
       table.insert(opts.sources, require("null-ls.builtins.formatting.clang_format"))
       table.insert(opts.sources, require("null-ls.builtins.formatting.prettierd"))
-      table.insert(opts.sources, require("null-ls.builtins.formatting.jq"))
     end,
   },
 }
