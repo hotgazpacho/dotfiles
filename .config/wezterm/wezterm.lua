@@ -116,6 +116,23 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	}
 end)
 
+-- wezterm.gui is not available to the mux server, so take care to
+-- do something reasonable when this config is evaluated by the mux
+function get_appearance()
+	if wezterm.gui then
+		return wezterm.gui.get_appearance()
+	end
+	return "Dark"
+end
+
+function scheme_for_appearance(appearance)
+	if appearance:find("Dark") then
+		return "Catppuccin Macchiato"
+	else
+		return "Catppuccin Latte"
+	end
+end
+
 return {
 	font = wezterm.font_with_fallback({
 		"Fira Code",
@@ -130,7 +147,7 @@ return {
 			{ family = "Symbols Nerd Font Mono", scale = 1.0 },
 		}),
 	},
-	color_scheme = "Catppuccin Macchiato",
+	color_scheme = scheme_for_appearance(get_appearance()),
 	hide_tab_bar_if_only_one_tab = true,
 	initial_rows = 60,
 	initial_cols = 120,
