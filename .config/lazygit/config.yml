@@ -18,10 +18,14 @@ customCommands:
     description: "Browse the commit on GitHub"
     key: "b"
 git:
+  commit:
+    autoWrapCommitMessage: true
+    autoWrapWidth: 80
   paging:
     colorArg: always
     pager: delta --dark --paging=never
 gui:
+  filterMode: "fuzzy"
   theme:
     activeBorderColor:
       - "#8aadf4"
