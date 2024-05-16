@@ -139,7 +139,7 @@ return {
 		{ family = "Symbols Nerd Font Mono", scale = 1.0 },
 	}),
 	font_size = 13.0,
-	line_height = 1.05,
+	line_height = 1.1,
 	use_cap_height_to_scale_fallback_fonts = true,
 	window_frame = {
 		font = wezterm.font_with_fallback({
