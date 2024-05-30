@@ -141,7 +141,7 @@ if which -p "mise" &> /dev/null; then
 fi
 
 # zsh-syntax-highlighting
-test -e "source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh" && source source ~/.zsh/catppuccin_macchiato-zsh-syntax-highlighting.zsh
+test -e "~/.zsh/catppuccin_moacchiato-zsh-syntax-highlighting.zsh" && source ~/.zsh/catppuccin_moacchiato-zsh-syntax-highlighting.zsh
 test -e "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" && source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # zsh-autosuggestions
