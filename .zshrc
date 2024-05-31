@@ -156,8 +156,10 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # https://github.com/junegunn/fzf-git.sh
 [ -f ~/fzf-git.sh ] && source ~/fzf-git.sh
 
-# CTRL + R: put the selected history command in the preview window - "{}" will be replaced by item selected in fzf execution runtime
-export FZF_CTRL_R_OPTS="--preview 'echo {}'"
+# CTRL + R: Commands that are too long are not fully visible on screen. 
+# We can use --preview option to display the full command on the preview window. 
+# Bind ? key for toggling the preview window.
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 
 # ALT + C: set "fd-find" as directory search engine instead of "find"
 export FZF_ALT_C_COMMAND="fd --type directory"
