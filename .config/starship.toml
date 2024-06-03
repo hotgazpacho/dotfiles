@@ -13,6 +13,14 @@ untracked = "🤷"
 staged = '[++\($count\)](green)'
 style = "yellow bold"
 
+[kubernetes]
+disabled = true
+#format = '[$symbol$context( \($namespace\))]($style)'
+contexts = [
+  { context_pattern = "*kind*", context_alias = "kind", user_alias = "", style = "cyan bold", symbol = "☸ " },
+  { context_pattern = ".*prd.*", style = "red bold", symbol = "🔴 " },
+]
+
 [time]
-disabled = false
+disabled = true
 format = '[󰢗 $time ]($style) '
