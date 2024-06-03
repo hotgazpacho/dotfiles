@@ -229,4 +229,6 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
 # kubectl
-eval "$(kubectl tanium cache alias --skip-update --skip-cache)"
+if [[ $(kubectl plugin list --name-only 2>&1)  =~ "tanium" ]]; then
+  eval "$(kubectl tanium cache alias --skip-update --skip-cache)"
+fi
