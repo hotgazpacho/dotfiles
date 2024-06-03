@@ -117,11 +117,21 @@ alias npx="npx --no-install" # don't install node modules when running npx
 alias yar="yarn"
 alias dotfiles="$(which git) --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias ldotfiles="$(which lazygit) --git-dir=$HOME/.dotfiles --work-tree=$HOME"
-alias ls="lsd"
-alias ll="lsd --almost-all --long"
-alias llm="lsd --timesort --long"
-alias lS="lsd --oneline --classic"
-alias lt="lsd --tree --depth=2"
+# brew install eza
+if (( $+commands[eza] )); then
+  # Automatically show icons. This is supposed to be the default 🤷
+  export EZA_ICONS_AUTO=1
+  # Usee eza rather than ls
+  alias ls="eza"
+  # list (almost) everything, directories first
+  alias ll="eza -al --group-directories-first"
+  # Display a tree of files 2 levels deep, with metadata
+  alias lt="eza --long --tree --depth=2"
+  # list only hidden files and directories
+  alias lh="eza -dl .* --group-directories-first"
+else
+  echo "eza not found; brew install eza"
+fi
 
 export PATH=/usr/local/sbin:$PATH
 
@@ -165,8 +175,8 @@ export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap 
 export FZF_ALT_C_COMMAND="fd --type directory"
 
 # ALT + C: put the tree command output based on item selected
-# Requires `tree`, `brew install tree`
-export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
+# Requires `eza`, `brew install eza`
+export FZF_ALT_C_OPTS="--preview 'eza --color=always --icons=always --tree --level=3 {}'"
 
 # CTRL + T: set "fd-find" as search engine instead of "find" and exclude .git, but include hidden files, for the results
 export FZF_CTRL_T_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
