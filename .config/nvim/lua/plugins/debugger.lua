@@ -35,36 +35,4 @@ return {
       },
     },
   },
-  {
-    "jay-babu/mason-nvim-dap.nvim",
-    enabled = not vim.g.vscode,
-    opts = {
-      automatic_setup = true,
-      opts = function(_, opts)
-        vim.list_extend(opts.ensure_installed, { "delve" })
-      end,
-    },
-  },
-  {
-    "nvim-telescope/telescope-dap.nvim",
-    config = function()
-      require("telescope").load_extension("dap")
-    end,
-    keys = {
-      {
-        "<leader>df",
-        function()
-          require("telescope").extensions.dap.configurations({})
-        end,
-        desc = "Con(f)igurations",
-      },
-      {
-        "<leader>dv",
-        function()
-          require("telescope").extensions.dap.variables({})
-        end,
-        desc = "Variables",
-      },
-    },
-  },
 }
