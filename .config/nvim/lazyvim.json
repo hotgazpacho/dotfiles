@@ -5,8 +5,10 @@
     "lazyvim.plugins.extras.coding.mini-surround",
     "lazyvim.plugins.extras.coding.yanky",
     "lazyvim.plugins.extras.dap.core",
+    "lazyvim.plugins.extras.editor.aerial",
     "lazyvim.plugins.extras.editor.dial",
     "lazyvim.plugins.extras.editor.fzf",
+    "lazyvim.plugins.extras.editor.inc-rename",
     "lazyvim.plugins.extras.editor.leap",
     "lazyvim.plugins.extras.editor.mini-move",
     "lazyvim.plugins.extras.editor.refactoring",
@@ -26,7 +28,9 @@
     "lazyvim.plugins.extras.lang.yaml",
     "lazyvim.plugins.extras.linting.eslint",
     "lazyvim.plugins.extras.lsp.none-ls",
+    "lazyvim.plugins.extras.ui.treesitter-context",
     "lazyvim.plugins.extras.util.dot",
+    "lazyvim.plugins.extras.util.mini-hipatterns",
     "lazyvim.plugins.extras.vscode"
   ],
   "news": {
