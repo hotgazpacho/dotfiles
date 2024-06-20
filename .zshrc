@@ -166,6 +166,12 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # https://github.com/junegunn/fzf-git.sh
 [ -f ~/fzf-git.sh ] && source ~/fzf-git.sh
 
+# Use catpuccin macchiato color theme for fzf
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
+" --color=bg+:#1e2030,bg:#24273a,spinner:#8bd5ca,hl:#8aadf4"\
+" --color=fg:#5b6078,header:#8aadf4,info:#eed49f,pointer:#8bd5ca"\
+" --color=marker:#8bd5ca,fg+:#f4dbd6,prompt:#eed49f,hl+:#8aadf4"
+
 # CTRL + R: Commands that are too long are not fully visible on screen. 
 # We can use --preview option to display the full command on the preview window. 
 # Bind ? key for toggling the preview window.
