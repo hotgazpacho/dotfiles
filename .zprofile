@@ -5,4 +5,6 @@ else
   HOMEBREW_PREFIX="/usr/local"
 fi
 eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
-export PATH="$HOME/.local/share/mise/shims:$PATH"
+if which -p "mise" &> /dev/null; then
+  eval "$(mise activate zsh --shims)"
+fi
