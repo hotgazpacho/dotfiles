@@ -2,7 +2,7 @@ return {
   {
     "nvimtools/none-ls.nvim",
     opts = function(_, opts)
-      table.insert(opts.sources, require("null-ls.builtins.diagnostics.commitlint"))
+      --      table.insert(opts.sources, require("null-ls.builtins.diagnostics.commitlint"))
       table.insert(opts.sources, require("null-ls.builtins.code_actions.gitrebase"))
       table.insert(opts.sources, require("null-ls.builtins.code_actions.gitsigns"))
     end,
