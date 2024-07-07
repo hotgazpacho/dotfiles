@@ -71,6 +71,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Use 22 (default 15) characters left truncated PWD
+export ZSH_THEME_TERM_TAB_TITLE_IDLE="%22<..<%~%<<"
+
 # direnv hook
 if whence -p "direnv" &> /dev/null; then
   eval "$(direnv hook zsh)"
