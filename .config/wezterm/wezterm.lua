@@ -31,6 +31,32 @@ local process_icons = {
 	["ruby"] = wezterm.nerdfonts.dev_ruby,
 }
 
+local battery_icons = {
+	[1.0] = wezterm.nerdfonts.md_battery,
+	[0.9] = wezterm.nerdfonts.md_battery_90,
+	[0.8] = wezterm.nerdfonts.md_battery_80,
+	[0.7] = wezterm.nerdfonts.md_battery_70,
+	[0.6] = wezterm.nerdfonts.md_battery_60,
+	[0.5] = wezterm.nerdfonts.md_battery_50,
+	[0.4] = wezterm.nerdfonts.md_battery_40,
+	[0.3] = wezterm.nerdfonts.md_battery_30,
+	[0.2] = wezterm.nerdfonts.md_battery_20,
+	[0.1] = wezterm.nerdfonts.md_battery_10,
+}
+
+local battery_charging_icons = {
+	[1.0] = wezterm.nerdfonts.md_battery_charging,
+	[0.9] = wezterm.nerdfonts.md_battery_charging_90,
+	[0.8] = wezterm.nerdfonts.md_battery_charging_80,
+	[0.7] = wezterm.nerdfonts.md_battery_charging_70,
+	[0.6] = wezterm.nerdfonts.md_battery_charging_60,
+	[0.5] = wezterm.nerdfonts.md_battery_charging_50,
+	[0.4] = wezterm.nerdfonts.md_battery_charging_40,
+	[0.3] = wezterm.nerdfonts.md_battery_charging_30,
+	[0.2] = wezterm.nerdfonts.md_battery_charging_20,
+	[0.1] = wezterm.nerdfonts.md_battery_charging_10,
+}
+
 -- Equivalent to POSIX basename(3)
 -- Given "/foo/bar" returns "bar"
 -- Given "c:\\foo\\bar" returns "bar"
@@ -121,13 +147,42 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, cfg, hover, max_width)
 	}
 end)
 
-wezterm.on("update-right-status", function(window, pane)
+wezterm.on("update-status", function(window, pane)
 	local date = wezterm.strftime("%a %b %-d %-I:%M %p")
-
-	-- Make it italic and underlined
 	window:set_right_status(wezterm.format({
 		{ Attribute = { Italic = true } },
+		{ Attribute = { Intensity = "Half" } },
+		{ Foreground = { AnsiColor = "Silver" } },
 		{ Text = " " .. wezterm.nerdfonts.md_calendar_clock_outline .. " " .. date .. " " },
+	}))
+
+	local bat = ""
+	local bat_color = "White"
+	for _, b in ipairs(wezterm.battery_info()) do
+		local state_rounded_down = math.floor(b.state_of_charge * 10) / 10
+		if b.state == "Charging" then
+			bat = battery_charging_icons[state_rounded_down] or wezterm.nerdfonts.md_battery_alert_variant_outline
+		else
+			bat = battery_icons[state_rounded_down] or wezterm.nerdfonts.md_battery_alert_variant_outline
+		end
+		bat = bat .. " " .. string.format("%.0f%%", b.state_of_charge * 100)
+
+		if b.state_of_charge >= 0.75 then
+			bat_color = "Lime"
+		elseif b.state_of_charge >= 0.5 then
+			bat_color = "White"
+		elseif b.state_of_charge >= 0.2 then
+			bat_color = "Yellow"
+		else
+			bat_color = "Red"
+		end
+	end
+
+	window:set_left_status(wezterm.format({
+		{ Attribute = { Italic = true } },
+		{ Attribute = { Intensity = "Half" } },
+		{ Foreground = { AnsiColor = bat_color } },
+		{ Text = " " .. bat .. " " },
 	}))
 end)
 
