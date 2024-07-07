@@ -8,7 +8,7 @@ local process_icons = {
 	["nvim"] = wezterm.nerdfonts.linux_neovim,
 	["vim"] = wezterm.nerdfonts.dev_vim,
 	["node"] = wezterm.nerdfonts.md_hexagon,
-	["zsh"] = wezterm.nerdfonts.dev_terminal,
+	["zsh"] = wezterm.nerdfonts.cod_terminal,
 	["bash"] = wezterm.nerdfonts.cod_terminal_bash,
 	["htop"] = wezterm.nerdfonts.md_chart_donut_variant,
 	["cargo"] = wezterm.nerdfonts.dev_rust,
@@ -18,6 +18,10 @@ local process_icons = {
 	["lazygit"] = wezterm.nerdfonts.dev_git,
 	["eza"] = wezterm.nerdfonts.md_file_tree,
 	["fzf"] = wezterm.nerdfonts.md_text_search_variant,
+	["jless"] = wezterm.nerdfonts.md_application_braces_outline,
+	["jq"] = wezterm.nerdfonts.md_code_json,
+	["bat"] = wezterm.nerdfonts.md_bat,
+	["cat"] = wezterm.nerdfonts.md_cat,
 	["lua"] = wezterm.nerdfonts.seti_lua,
 	["wget"] = wezterm.nerdfonts.md_arrow_down_box,
 	["curl"] = wezterm.nerdfonts.md_flattr,
@@ -41,7 +45,7 @@ local function get_process(tab)
 	end
 
 	--local icon = process_icons[process_name] or string.format("[%s]", process_name)
-	local icon = process_icons[process_name] or wezterm.nerdfonts.seti_checkbox_unchecked
+	local icon = process_icons[process_name] or wezterm.nerdfonts.cod_terminal
 
 	return icon
 end
