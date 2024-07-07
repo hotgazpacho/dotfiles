@@ -86,16 +86,13 @@ config.font_size = 13.0
 config.initial_rows = 60
 config.initial_cols = 120
 config.native_macos_fullscreen_mode = true
-config.window_frame = {
-	font_size = 14,
-}
 
 -- Tab/Status bar
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = false
 config.tab_max_width = 60
 config.tab_bar_at_bottom = false
-wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+wezterm.on("format-tab-title", function(tab, tabs, panes, cfg, hover, max_width)
 	local has_unseen_output = false
 	if not tab.is_active then
 		for _, pane in ipairs(tab.panes) do
