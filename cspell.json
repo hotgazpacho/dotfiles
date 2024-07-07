@@ -1,0 +1,14 @@
+{
+  "flagWords": [],
+  "language": "en",
+  "version": "0.2",
+  "words": [
+    "POSIX",
+    "fullscreen",
+    "neovim",
+    "nerdfonts",
+    "nvim",
+    "strftime",
+    "wezterm"
+  ]
+}

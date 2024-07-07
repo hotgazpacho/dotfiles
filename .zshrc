@@ -238,3 +238,8 @@ gpgconf --launch gpg-agent
 if [[ $(kubectl plugin list --name-only 2>&1)  =~ "tanium" ]]; then
   eval "$(kubectl tanium cache alias --skip-update --skip-cache)"
 fi
+
+# Sort the cspell.json file. Requires jq and sponge (from moreutils)
+function sort_cspell() {
+  jq -S '.words |= sort_by(.)' cspell.json | sponge cspell.json
+}
