@@ -122,28 +122,77 @@ config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = false
 config.tab_max_width = 60
 config.tab_bar_at_bottom = false
+config.tab_bar_style = {
+	new_tab = " " .. wezterm.nerdfonts.md_tab .. "  ",
+	new_tab_hover = " " .. wezterm.nerdfonts.md_tab_plus .. "  ",
+	window_close = " X ",
+	window_close_hover = " X ",
+	window_hide = " . ",
+	window_hide_hover = " . ",
+	window_maximize = " - ",
+	window_maximize_hover = " - ",
+}
 wezterm.on("format-tab-title", function(tab, tabs, panes, cfg, hover, max_width)
-	local has_unseen_output = false
-	if not tab.is_active then
-		for _, pane in ipairs(tab.panes) do
-			if pane.has_unseen_output then
-				has_unseen_output = true
-				break
-			end
-		end
-	end
+	local title = string.format(
+		"%d: %s %s",
+		tab.tab_index + 1,
+		get_process(tab),
+		wezterm.truncate_left(tab.active_pane.title, max_width - 8)
+	)
+	local left_cap = wezterm.nerdfonts.ple_left_half_circle_thin
+	local right_cap = wezterm.nerdfonts.ple_right_half_circle_thin
+	local palette = cfg.resolved_palette
+	local intensity = palette.tab_bar.inactive_tab.intensity
+	local italic = palette.tab_bar.inactive_tab.italic
+	local strikethrough = palette.tab_bar.inactive_tab.strikethrough
+	local underline = palette.tab_bar.inactive_tab.underline
+	local title_fg_color = palette.tab_bar.inactive_tab.fg_color
+	local title_bg_color = palette.tab_bar.inactive_tab.bg_color
+	local cap_fg_color = palette.tab_bar.inactive_tab.fg_color
+	local cap_bg_color = palette.tab_bar.inactive_tab.bg_color
 
-	local title = string.format(" %s %s  ⌘%d ", get_process(tab), tab.active_pane.title, tab.tab_index + 1)
-
-	if has_unseen_output then
-		return {
-			{ Foreground = { Color = "Orange" } },
-			{ Text = title },
-		}
+	if tab.is_active then
+		intensity = palette.tab_bar.active_tab.intensity
+		italic = palette.tab_bar.active_tab.italic
+		strikethrough = palette.tab_bar.active_tab.strikethrough
+		underline = palette.tab_bar.active_tab.underline
+		title_fg_color = palette.tab_bar.active_tab.fg_color
+		title_bg_color = palette.tab_bar.active_tab.bg_color
+		cap_fg_color = palette.tab_bar.active_tab.bg_color
+		cap_bg_color = palette.tab_bar.active_tab.fg_color
+		left_cap = wezterm.nerdfonts.ple_left_half_circle_thick
+		right_cap = wezterm.nerdfonts.ple_right_half_circle_thick
+	elseif hover then
+		intensity = palette.tab_bar.inactive_tab_hover.intensity
+		italic = palette.tab_bar.inactive_tab_hover.italic
+		strikethrough = palette.tab_bar.inactive_tab_hover.strikethrough
+		underline = palette.tab_bar.inactive_tab_hover.underline
+		title_fg_color = palette.tab_bar.inactive_tab_hover.fg_color
+		title_bg_color = palette.tab_bar.inactive_tab_hover.bg_color
+		cap_fg_color = palette.tab_bar.inactive_tab_hover.fg_color
+		cap_bg_color = palette.tab_bar.inactive_tab_hover.bg_color
 	end
 
 	return {
+		{ Attribute = { Intensity = intensity } },
+		{ Attribute = { Italic = italic } },
+		{ Attribute = { StrikeThrough = strikethrough } },
+		{ Attribute = { Underline = underline } },
+		{ Foreground = { Color = palette.tab_bar.background } },
+		{ Background = { Color = palette.tab_bar.background } },
+		{ Text = " " },
+		{ Foreground = { Color = cap_fg_color } },
+		{ Background = { Color = cap_bg_color } },
+		{ Text = left_cap },
+		{ Foreground = { Color = title_fg_color } },
+		{ Background = { Color = title_bg_color } },
 		{ Text = title },
+		{ Foreground = { Color = cap_fg_color } },
+		{ Background = { Color = cap_bg_color } },
+		{ Text = right_cap },
+		{ Foreground = { Color = palette.tab_bar.background } },
+		{ Background = { Color = palette.tab_bar.background } },
+		{ Text = "" },
 	}
 end)
 
