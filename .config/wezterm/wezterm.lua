@@ -167,7 +167,7 @@ wezterm.on("update-status", function(window, pane)
 		end
 		bat = bat .. " " .. string.format("%.0f%%", b.state_of_charge * 100)
 
-		if b.state_of_charge >= 0.75 then
+		if b.state_of_charge >= 0.8 then
 			bat_color = "Lime"
 		elseif b.state_of_charge >= 0.5 then
 			bat_color = "White"
