@@ -24,6 +24,11 @@ else
 
   -- Title
   opt.title = true
+  -- Tail of filename in the buffer
+  -- (omit if empty: space, modified flag)
+  -- (omit if empty: space, readonly flag)
+  -- (omit if empty: space, relative path to file in buffer)
+  opt.titlestring = "%t%( %M%)%( %R%)%( (%f)%"
 end
 
 opt.hlsearch = false -- Disable highlighting search results
