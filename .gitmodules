@@ -1,3 +1,6 @@
 [submodule ".config/base16-fzf"]
 	path = .config/base16-fzf
 	url = https://github.com/tinted-theming/base16-fzf
+[submodule ".zsh-custom/plugins/fzf-tab"]
+	path = .zsh-custom/plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab

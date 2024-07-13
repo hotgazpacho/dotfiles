@@ -59,7 +59,7 @@ ZSH_CUSTOM=$HOME/.zsh-custom
 # Add wisely, as too many plugins slow down shell startup.
 # NOTE: yarn-autocompletions requires installation
 # git clone https://github.com/g-plane/zsh-yarn-autocompletions && zsh-yarn-autocompletions && ./install.sh $ZSH_CUSTOM/plugins
-plugins=(gh golang bazel 1password macos kubectl)
+plugins=(gh golang bazel 1password macos kubectl fzf-tab)
 
 # Make Homebrew's completions available
 # See https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
@@ -192,6 +192,21 @@ export FZF_CTRL_T_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --ex
 
 # CTRL + T: put the file content if item select is a file, or put tree command output if item selected is directory
 export FZF_CTRL_T_OPTS="--preview '[ -d {} ] && tree -C {} || bat --color=always --style=numbers {}'"
+
+# fzf-tab configuration
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+# NOTE: don't use escape sequences here, fzf-tab will ignore them
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
+zstyle ':completion:*' menu no
+# preview directory's content with eza when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+# switch group using `<` and `>`
+zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # corrects your previous console command
 # brew install thefuck
