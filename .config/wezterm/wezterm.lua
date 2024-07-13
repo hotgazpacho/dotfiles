@@ -178,9 +178,6 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, cfg, hover, max_width)
 		{ Attribute = { Italic = italic } },
 		{ Attribute = { StrikeThrough = strikethrough } },
 		{ Attribute = { Underline = underline } },
-		{ Foreground = { Color = palette.tab_bar.background } },
-		{ Background = { Color = palette.tab_bar.background } },
-		{ Text = " " },
 		{ Foreground = { Color = cap_fg_color } },
 		{ Background = { Color = cap_bg_color } },
 		{ Text = left_cap },
@@ -192,19 +189,12 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, cfg, hover, max_width)
 		{ Text = right_cap },
 		{ Foreground = { Color = palette.tab_bar.background } },
 		{ Background = { Color = palette.tab_bar.background } },
-		{ Text = "" },
+		{ Text = " " },
 	}
 end)
 
 wezterm.on("update-status", function(window, pane)
 	local date = wezterm.strftime("%a %b %-d %-I:%M %p")
-	window:set_right_status(wezterm.format({
-		{ Attribute = { Italic = true } },
-		{ Attribute = { Intensity = "Half" } },
-		{ Foreground = { AnsiColor = "Silver" } },
-		{ Text = " " .. wezterm.nerdfonts.md_calendar_clock_outline .. " " .. date .. " " },
-	}))
-
 	local bat = ""
 	local bat_color = "White"
 	for _, b in ipairs(wezterm.battery_info()) do
@@ -227,9 +217,11 @@ wezterm.on("update-status", function(window, pane)
 		end
 	end
 
-	window:set_left_status(wezterm.format({
+	window:set_right_status(wezterm.format({
 		{ Attribute = { Italic = true } },
 		{ Attribute = { Intensity = "Half" } },
+		{ Foreground = { AnsiColor = "Silver" } },
+		{ Text = " " .. wezterm.nerdfonts.md_calendar_clock_outline .. " " .. date },
 		{ Foreground = { AnsiColor = bat_color } },
 		{ Text = " " .. bat .. " " },
 	}))
