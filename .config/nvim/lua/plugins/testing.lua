@@ -7,7 +7,7 @@ return {
         "folke/which-key.nvim",
         opts = {
           spec = {
-            { "<leader>t", group = "test" },
+            { "<leader>t", group = "test", icon = { icon = "󰂖", color = "blue" } },
           },
         },
       },
