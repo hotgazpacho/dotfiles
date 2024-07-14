@@ -34,6 +34,7 @@ end
 opt.hlsearch = false -- Disable highlighting search results
 
 vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
 
 -- python setup
 vim.g.python3_host_prog = vim.fs.normalize("~/.pyenv/versions/neovim3/bin/python")
