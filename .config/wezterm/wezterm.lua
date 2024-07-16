@@ -110,7 +110,7 @@ config.font = wezterm.font_with_fallback({
 	{ family = "Fira Code", weight = "Medium" },
 	{ family = "Symbols Nerd Font Mono", scale = 0.9 },
 })
-config.font_size = 13.0
+config.font_size = 14.0
 config.line_height = 1.1
 
 -- Window
