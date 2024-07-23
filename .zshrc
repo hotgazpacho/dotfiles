@@ -53,13 +53,18 @@ export ZSH=$HOME/.oh-my-zsh
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$HOME/.zsh-custom
 
+# pyenv init
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # NOTE: yarn-autocompletions requires installation
 # git clone https://github.com/g-plane/zsh-yarn-autocompletions && zsh-yarn-autocompletions && ./install.sh $ZSH_CUSTOM/plugins
-plugins=(gh golang bazel 1password macos kubectl fzf-tab)
+plugins=(gh golang bazel pyenv 1password macos kubectl fzf-tab)
 
 # Make Homebrew's completions available
 # See https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
@@ -213,16 +218,6 @@ zstyle ':fzf-tab:*' switch-group '<' '>'
 if type "thefuck" > /dev/null; then
   eval $(thefuck --alias);
 fi
-
-# pyenv
-# assumes that pyenv has already been initialized in .zprofile
-# export PYENV_ROOT="$HOME/.pyenv"
-# export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init --path)"
-#if type "pyenv" > /dev/null; then
-#  eval "$(pyenv init -)"
-#  eval "$(pyenv virtualenv-init -)"
-#fi
 
 # 1Password CLI autocomplete
 if type "op" > /dev/null; then
