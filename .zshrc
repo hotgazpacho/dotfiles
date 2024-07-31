@@ -244,8 +244,11 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 # use gpg keys for ssh
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
+# export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+# gpgconf --launch gpg-agent
+
+# use 1Password for ssh
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
 # kubectl
 if [[ $(kubectl plugin list --name-only 2>&1)  =~ "tanium" ]]; then
