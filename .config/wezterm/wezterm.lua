@@ -107,11 +107,11 @@ config.color_scheme = scheme_for_appearance(get_appearance())
 
 -- Font
 config.font = wezterm.font_with_fallback({
-	{ family = "Fira Code", weight = "Medium" },
+	{ family = "Fira Code", weight = 450 },
 	{ family = "Symbols Nerd Font Mono", scale = 0.9 },
 })
-config.font_size = 14.0
-config.line_height = 1.1
+config.font_size = 15.0
+config.line_height = 1.0
 
 -- Window
 config.initial_rows = 60
