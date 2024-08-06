@@ -6,14 +6,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
--- If opening from inside neovim terminal then do not load all the other plugins
-if os.getenv("NVIM") ~= nil then
-  require("lazy").setup({
-    { "willothy/flatten.nvim", config = true },
-  })
-  return
-end
-
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
