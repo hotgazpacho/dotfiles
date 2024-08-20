@@ -5,6 +5,9 @@ return {
     opts = function()
       return {
         startVisible = true,
+        disabled_fts = {
+          "dashboard",
+        },
       }
     end,
     keys = {
