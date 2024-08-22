@@ -7,10 +7,10 @@ if vim.g.vscode then
   opt.cursorcolumn = false
   opt.cursorline = false
 else
-  opt.cursorcolumn = true -- Enable highlighting of the current column
+  -- opt.cursorcolumn = true -- Enable highlighting of the current column
   -- Rulers
-  opt.ruler = true
-  opt.colorcolumn = "100"
+  -- opt.ruler = true
+  -- opt.colorcolumn = "100"
 
   -- Folding
   opt.foldmethod = "expr"
@@ -31,7 +31,7 @@ else
   opt.titlestring = [[%t%( %M%)%( %R%) (%f)]]
 end
 
-opt.hlsearch = false -- Disable highlighting search results
+--opt.hlsearch = false -- Disable highlighting search results
 
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
