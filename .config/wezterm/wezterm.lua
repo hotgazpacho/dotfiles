@@ -102,6 +102,72 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+-- Leader
+config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
+
+-- Keymap
+local function move_pane(key, direction)
+	return {
+		key = key,
+		mods = "LEADER",
+		action = wezterm.action.ActivatePaneDirection(direction),
+	}
+end
+
+local function resize_pane(key, direction)
+	return {
+		key = key,
+		action = wezterm.action.AdjustPaneSize({ direction, 3 }),
+	}
+end
+
+config.keys = {
+	{
+		key = "a",
+		-- When we're in leader mode _and_ CTRL + A is pressed...
+		mods = "LEADER|CTRL",
+		-- Actually send CTRL + A key to the terminal
+		action = wezterm.action.SendKey({ key = "a", mods = "CTRL" }),
+	},
+	{
+		key = '"',
+		mods = "LEADER",
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "%",
+		mods = "LEADER",
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+	move_pane("h", "Left"),
+	move_pane("j", "Down"),
+	move_pane("k", "Up"),
+	move_pane("l", "Right"),
+	{
+		-- When we push LEADER + R...
+		key = "r",
+		mods = "LEADER",
+		-- Activate the `resize_panes` keytable
+		action = wezterm.action.ActivateKeyTable({
+			name = "resize_panes",
+			-- Ensures the keytable stays active after it handles its
+			-- first keypress.
+			one_shot = false,
+			-- Deactivate the keytable after a timeout.
+			timeout_milliseconds = 1000,
+		}),
+	},
+}
+
+config.key_tables = {
+	resize_panes = {
+		resize_pane("j", "Down"),
+		resize_pane("k", "Up"),
+		resize_pane("h", "Left"),
+		resize_pane("l", "Right"),
+	},
+}
+
 -- Colorscheme
 config.color_scheme = scheme_for_appearance(get_appearance())
 
