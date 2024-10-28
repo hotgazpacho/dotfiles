@@ -131,12 +131,12 @@ config.keys = {
 		action = wezterm.action.SendKey({ key = "a", mods = "CTRL" }),
 	},
 	{
-		key = '"',
-		mods = "LEADER",
+		key = "|",
+		mods = "LEADER|SHIFT",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
-		key = "%",
+		key = "-",
 		mods = "LEADER",
 		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
