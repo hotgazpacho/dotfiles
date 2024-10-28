@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local projects = require("projects")
 
 local process_icons = {
 	["docker"] = wezterm.nerdfonts.linux_docker,
@@ -156,6 +157,18 @@ config.keys = {
 			-- Deactivate the keytable after a timeout.
 			timeout_milliseconds = 1000,
 		}),
+	},
+	{
+		key = "p",
+		mods = "LEADER",
+		-- Present in to our project picker
+		action = projects.choose_project(),
+	},
+	{
+		key = "f",
+		mods = "LEADER",
+		-- Present a list of existing workspaces
+		action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }),
 	},
 }
 
