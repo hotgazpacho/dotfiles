@@ -1,6 +1,52 @@
 // Place your key bindings in this file to override the defaults
 [
   {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown",
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp",
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight",
+  },
+  {
+    "key": "space ,",
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
+    "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space e",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "] b",
+    "command": "workbench.action.nextEditorInGroup",
+    "when": "(neovim.mode == 'normal' || neovim.mode == 'visual') && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "[ b",
+    "command": "workbench.action.previousEditorInGroup",
+    "when": "(neovim.mode == 'normal' || neovim.mode == 'visual') && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space shift+\\", // space | doesn't seem to work because | is a shifted \
+    "command": "workbench.action.splitEditorToRightGroup",
+    "when": "(neovim.mode == 'normal' || neovim.mode == 'visual') && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space -",
+    "command": "workbench.action.splitEditorToBelowGroup",
+    "when": "(neovim.mode == 'normal' || neovim.mode == 'visual') && (editorTextFocus || !inputFocus)"
+  },
+  {
     "key": "ctrl+`",
     "command": "workbench.action.terminal.focus"
   },
