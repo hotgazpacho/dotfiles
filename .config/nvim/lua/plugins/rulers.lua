@@ -15,6 +15,7 @@ return {
       "lazy",
       "mason",
       "dashboard",
+      "snacks_dashboard",
       "lspinfo",
       "noice",
       "Trouble",
