@@ -95,6 +95,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
+# Glamour style https://github.com/charmbracelet/glamour
+export GLAMOUR_STYLE="$XDG_CONFIG_HOME/glamour/catppuccin-macchiato.json"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
