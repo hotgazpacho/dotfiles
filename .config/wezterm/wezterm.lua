@@ -175,6 +175,37 @@ config.keys = {
 		mods = "LEADER",
 		action = wezterm.action.ShowTabNavigator,
 	},
+	{
+		key = "O",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.QuickSelectArgs({
+			label = "open url",
+			patterns = {
+				"https?://\\S+",
+			},
+			action = wezterm.action_callback(function(window, pane)
+				local url = window:get_selection_text_for_pane(pane)
+				wezterm.log_info("opening: " .. url)
+				wezterm.open_with(url)
+			end),
+		}),
+	},
+	{
+		key = "J",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.QuickSelectArgs({
+			label = "open jira",
+			patterns = {
+				"[A-Z][A-Z]+-\\d+",
+			},
+			action = wezterm.action_callback(function(window, pane)
+				local jira = window:get_selection_text_for_pane(pane)
+				local url = os.getenv("JIRA_URL") .. "/browse/" .. jira
+				wezterm.log_info("opening: " .. url)
+				wezterm.open_with(url)
+			end),
+		}),
+	},
 }
 
 config.key_tables = {
