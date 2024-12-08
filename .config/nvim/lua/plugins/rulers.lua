@@ -17,7 +17,6 @@ return {
       "dashboard",
       "snacks_dashboard",
       "lspinfo",
-      "noice",
       "Trouble",
       "zsh",
     },
