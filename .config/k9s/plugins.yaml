@@ -1,0 +1,23 @@
+plugins:
+  jlesslogs:
+    shortCut: Ctrl-L
+    confirm: false
+    description: "Logs (jless)"
+    scopes:
+      - container
+    command: sh
+    background: false
+    args:
+      - -c
+      - "kubectl logs pod/$POD -c $NAME -n $NAMESPACE | jless"
+  jqlogsc:
+    shortCut: Ctrl-J
+    confirm: false
+    description: "Logs (jq)"
+    scopes:
+      - container
+    command: sh
+    background: false
+    args:
+      - -c
+      - "kubectl stern pod/$POD -c $NAME -n $NAMESPACE --context $CONTEXT -o extjson | jq .message"

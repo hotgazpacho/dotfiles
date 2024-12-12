@@ -257,6 +257,7 @@ export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agen
 if [[ $(kubectl plugin list --name-only 2>&1)  =~ "tanium" ]]; then
   eval "$(kubectl tanium cache alias --skip-update --skip-cache)"
 fi
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Sort the cspell.json file. Requires jq and sponge (from moreutils)
 function sort_cspell() {
