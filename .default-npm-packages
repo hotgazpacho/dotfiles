@@ -6,3 +6,7 @@ cspell
 eslint_d
 @commitlint/cli
 @commitlint/config-conventional
+markdown-toc
+markdownlint-cli2
+prettier
+neovim

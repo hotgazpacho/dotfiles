@@ -23,3 +23,4 @@ golang.org/x/vuln/cmd/govulncheck
 github.com/abice/go-enum
 gotest.tools/gotestsum
 github.com/haya14busa/goplay/cmd/goplay
+golang.org/x/tools/cmd/gonew
