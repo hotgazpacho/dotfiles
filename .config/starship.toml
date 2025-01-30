@@ -4,6 +4,12 @@ palette = "catppuccin_macchiato"
 command_timeout = 2000
 right_format = """$time"""
 
+[directory]
+truncate_to_repo = false
+
+[directory.substitutions]
+'~/Development' = "~/👨🏻‍💻"
+
 [git_status]
 ahead = "⇡${count}"
 diverged = "󰃻⇡${ahead_count}⇣${behind_count}"
