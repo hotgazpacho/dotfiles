@@ -20,7 +20,7 @@ return {
     opts = {
       -- make sure mason installs the server
       servers = {
-        bufls = {},
+        buf_ls = {},
       },
     },
   },
