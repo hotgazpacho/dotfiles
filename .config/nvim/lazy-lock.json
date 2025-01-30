@@ -1,5 +1,5 @@
 {
-  "LazyVim": { "branch": "main", "commit": "2bea40c447b72e54ffb2d5cddc98d7798990796f" },
+  "LazyVim": { "branch": "main", "commit": "eb8ddea8c9438c34e71db097eb77a44185dd1093" },
   "SchemaStore.nvim": { "branch": "main", "commit": "085d1a9c4f30de56e312931582e80805f0ed3621" },
   "aerial.nvim": { "branch": "master", "commit": "2aeafd99937602fc40609ffffbdd2f99d77343e9" },
   "blink.cmp": { "branch": "main", "commit": "b6f11a0aa33e601c469a126e3ed6e35208fe3ea3" },
@@ -57,7 +57,7 @@
   "refactoring.nvim": { "branch": "master", "commit": "2db6d378e873de31d18ade549c2edba64ff1c2e3" },
   "render-markdown.nvim": { "branch": "main", "commit": "1ba6fb7998985736ca3480366c9792be05b93ad7" },
   "smartcolumn.nvim": { "branch": "main", "commit": "f14fbea6f86cd29df5042897ca9e3ba10ba4d27f" },
-  "snacks.nvim": { "branch": "main", "commit": "fa20147abd64b863de62488ed60df448a9c113f2" },
+  "snacks.nvim": { "branch": "main", "commit": "8ed0e5d191f67a3535386574a4c023b63b515d00" },
   "structrue-go.nvim": { "branch": "main", "commit": "4282b860cde0f5f25a1fb1af3ea8edb0db278e73" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
   "tokyonight.nvim": { "branch": "main", "commit": "dca4adba7dc5f09302a00b0e76078d54d82d2658" },
