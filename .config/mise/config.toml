@@ -6,3 +6,6 @@ direnv = "latest"
 rust = "1.73"
 lua = "5.1"
 pnpm = "9.15"
+
+[settings]
+idiomatic_version_file_enable_tools = ["python", "go", "node"]
