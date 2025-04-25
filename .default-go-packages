@@ -1,6 +1,7 @@
 mvdan.cc/gofumpt
 github.com/segmentio/golines
 github.com/golangci/golangci-lint/cmd/golangci-lint
+github.com/golangci/golangci-lint/v2/cmd/golangci-lint
 golang.org/x/tools/cmd/goimports
 golang.org/x/tools/cmd/gorename
 github.com/fatih/gomodifytags

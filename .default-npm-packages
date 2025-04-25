@@ -10,3 +10,4 @@ markdown-toc
 markdownlint-cli2
 prettier
 neovim
+@mermaid-js/mermaid-cli
