@@ -1,6 +1,7 @@
 return {
   {
     "ray-x/go.nvim",
+    enabled = not vim.g.vscode,
     lazy = true,
     dependencies = { -- optional packages
       { "mfussenegger/nvim-dap", enabled = not vim.g.vscode },
@@ -23,6 +24,7 @@ return {
   },
   {
     "crusj/structrue-go.nvim",
+    enabled = not vim.g.vscode,
     ft = { "go", "gomod", "gowork" },
     opts = {
       show_others_method = true, -- bool show methods of struct whose not in current file

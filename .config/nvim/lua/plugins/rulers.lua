@@ -1,5 +1,6 @@
 return {
   "m4xshen/smartcolumn.nvim",
+  enabled = false, -- not vim.g.vscode,
   opts = {
     colorcolumn = {
       "100",
@@ -15,6 +16,7 @@ return {
       "lazy",
       "mason",
       "dashboard",
+      "alpha_dashboard",
       "snacks_dashboard",
       "lspinfo",
       "Trouble",

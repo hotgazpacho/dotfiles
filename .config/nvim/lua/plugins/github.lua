@@ -6,10 +6,12 @@ return {
       table.insert(opts.sources, require("null-ls.builtins.code_actions.gitrebase"))
       table.insert(opts.sources, require("null-ls.builtins.code_actions.gitsigns"))
     end,
+    enabled = not vim.g.vscode,
   },
   {
     "ruifm/gitlinker.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
+    enabled = not vim.g.vscode,
     opts = {
       mappings = nil,
     },

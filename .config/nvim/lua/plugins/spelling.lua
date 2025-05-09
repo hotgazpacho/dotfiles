@@ -64,11 +64,15 @@ end
 return {
   {
     "davidmh/cspell.nvim",
+    enabled = not vim.g.vscode,
     dependencies = { "Joakker/lua-json5" },
   },
   {
     "nvimtools/none-ls.nvim",
     opts = function(_, opts)
+      if vim.g.vscode then
+        return opts
+      end
       local config = {
         find_json = function(cwd)
           local vscode_dir = find_vscode_config_dir(cwd)
