@@ -8,7 +8,7 @@ customCommands:
     description: "commit with commitizen"
     key: "C"
     loadingText: "opening commitizen commit tool"
-    subprocess: true
+    output: terminal
   - command: "gh browse"
     context: "files"
     description: "Browse the repository on GitHub"
@@ -46,6 +46,5 @@ gui:
       - "#cad3f5"
     searchingActiveBorderColor:
       - "#eed49f"
-
   authorColors:
     "*": "#b7bdf8"
