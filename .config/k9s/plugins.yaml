@@ -1,4 +1,15 @@
 plugins:
+  tailspin:
+    shortCut: Ctrl-T
+    confirm: false
+    description: Tail logs with tailspin
+    scopes:
+      - container
+    command: bash
+    background: false
+    args:
+      - -c
+      - "kubectl logs pod/$POD -c $NAME -n $NAMESPACE --context $CONTEXT --follow | tspin"
   jlesslogs:
     shortCut: Ctrl-L
     confirm: false
