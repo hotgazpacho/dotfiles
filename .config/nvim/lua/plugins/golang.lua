@@ -2,7 +2,6 @@ return {
   {
     "ray-x/go.nvim",
     enabled = not vim.g.vscode,
-    lazy = true,
     dependencies = { -- optional packages
       { "mfussenegger/nvim-dap", enabled = not vim.g.vscode },
       { "ray-x/guihua.lua", enabled = not vim.g.vscode },
@@ -16,8 +15,26 @@ return {
       dap_debug_vt = true,
       icons = { breakpoint = "🧘", currentpos = "🏃" },
       trouble = true,
-      luasnip = true,
+      lsp_keymaps = false,
+      lsp_semantic_highlights = true,
     },
+    config = function(lp, opts)
+      require("go").setup(opts)
+      local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = "*.go",
+        callback = function()
+          require("go.format").goimports()
+        end,
+        group = format_sync_grp,
+      })
+
+      local gopls_cfg = require("go.lsp").config()
+      vim.lsp.config.gopls = gopls_cfg
+      -- gopls_cfg.filetypes = { 'go', 'gomod'}, -- override settings
+      vim.lsp.enable("gopls")
+    end,
+    event = { "CmdlineEnter" },
     ft = { "go", "gomod", "gowork" },
     -- Use :GoInstallBinaries
     -- build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
