@@ -3,9 +3,12 @@ go = "latest"
 node = "latest"
 python = "3.10.4"
 direnv = "latest"
-rust = "1.73"
+rust = "latest"
+ruby = "latest"
 lua = "5.1"
-pnpm = "9.15"
+pnpm = "latest"
+biome = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python", "go", "node"]
+color = true
