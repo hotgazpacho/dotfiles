@@ -2,7 +2,7 @@ return {
   {
     "mason-org/mason.nvim",
     opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, { "buf", "buf-language-server" })
+      vim.list_extend(opts.ensure_installed, { "buf" })
     end,
   },
   -- add proto to treesitter
