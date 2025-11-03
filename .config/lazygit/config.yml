@@ -21,9 +21,9 @@ git:
   commit:
     autoWrapCommitMessage: true
     autoWrapWidth: 80
-  paging:
-    colorArg: always
-    pager: delta --tabs=2 --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+  pagers:
+    - colorArg: always
+      pager: delta --tabs=2 --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
 gui:
   filterMode: "fuzzy"
   theme:
