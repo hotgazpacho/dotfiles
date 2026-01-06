@@ -1,11 +1,10 @@
 [tools]
 go = "latest"
 node = "latest"
-python = "3.10.4"
+python = "latest"
 direnv = "latest"
 rust = "latest"
 ruby = "latest"
-lua = "5.1"
 pnpm = "latest"
 biome = "latest"
 
