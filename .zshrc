@@ -156,6 +156,11 @@ if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Adds ~/.rd/bin to the path if the diretory exists
+if [ -d "$HOME/.rd/bin" ]; then
+  export PATH="$HOME/.rd/bin/:$PATH"
+fi
+
 # rtx, now mise-en-place
 if which -p "mise" &> /dev/null; then
   eval "$($(brew --prefix)/bin/mise activate zsh)"
