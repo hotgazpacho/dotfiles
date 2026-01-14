@@ -258,11 +258,19 @@ export GPG_TTY
 # use 1Password for ssh
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
-# kubectl
-if [[ $(kubectl plugin list --name-only 2>&1)  =~ "tanium" ]]; then
-  eval "$(kubectl tanium cache alias --skip-update --skip-cache)"
-fi
+# kubernetes
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# uv
+if command -v uv > /dev/null; then
+  eval "$(uv generate-shell-completion zsh)"
+else
+  echo "uv is not available; brew install uv"
+fi
+
+if command -v uvx > /dev/null; then
+  eval "$(uvx --generate-shell-completion zsh)"
+fi
 
 # Sort the cspell.json file. Requires jq and sponge (from moreutils)
 function sort_cspell() {
