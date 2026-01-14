@@ -1,12 +1,13 @@
 [tools]
 go = "latest"
 node = "latest"
-python = "latest"
+python = "3.14.2"
 direnv = "latest"
 rust = "latest"
 ruby = "latest"
 pnpm = "latest"
 biome = "latest"
+dotnet = "8"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python", "go", "node"]
