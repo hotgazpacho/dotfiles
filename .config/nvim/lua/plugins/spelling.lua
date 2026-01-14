@@ -61,40 +61,42 @@ local function find_vscode_config_dir(cwd)
   return nil
 end
 
-return {
-  {
-    "davidmh/cspell.nvim",
-    enabled = not vim.g.vscode,
-    dependencies = { "Joakker/lua-json5" },
-  },
-  {
-    "nvimtools/none-ls.nvim",
-    opts = function(_, opts)
-      if vim.g.vscode then
-        return opts
-      end
-      local config = {
-        find_json = function(cwd)
-          local vscode_dir = find_vscode_config_dir(cwd)
-          if vscode_dir ~= nil then
-            return find_cspell_config_path(vscode_dir)
-          end
-          -- not in a project with vscode, so try to find the first cspell config in the tree
-          return find_cspell_config_path(cwd)
-        end,
-        decode_json = require("json5").parse,
-      }
-      local cspell = require("cspell")
-      table.insert(
-        opts.sources,
-        cspell.diagnostics.with({
-          config = config,
-          diagnostics_postprocess = function(diagnostic)
-            diagnostic.severity = vim.diagnostic.severity["HINT"]
-          end,
-        })
-      )
-      table.insert(opts.sources, cspell.code_actions.with({ config = config }))
-    end,
-  },
-}
+return {}
+
+-- return {
+--   --  {
+--   --    "davidmh/cspell.nvim",
+--   --    enabled = not vim.g.vscode,
+--   --    dependencies = { "Joakker/lua-json5" },
+--   --  },
+--   {
+--     "nvimtools/none-ls.nvim",
+--     opts = function(_, opts)
+--       if vim.g.vscode then
+--         return opts
+--       end
+--       local config = {
+--         find_json = function(cwd)
+--           local vscode_dir = find_vscode_config_dir(cwd)
+--           if vscode_dir ~= nil then
+--             return find_cspell_config_path(vscode_dir)
+--           end
+--           -- not in a project with vscode, so try to find the first cspell config in the tree
+--           return find_cspell_config_path(cwd)
+--         end,
+--         --decode_json = require("json5").parse,
+--       }
+--       local cspell = require("cspell")
+--       table.insert(
+--         opts.sources,
+--         cspell.diagnostics.with({
+--           config = config,
+--           diagnostics_postprocess = function(diagnostic)
+--             diagnostic.severity = vim.diagnostic.severity["HINT"]
+--           end,
+--         })
+--       )
+--       table.insert(opts.sources, cspell.code_actions.with({ config = config }))
+--     end,
+--   },
+-- }
