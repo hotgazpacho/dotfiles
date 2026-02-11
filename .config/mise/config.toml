@@ -9,5 +9,5 @@ biome = "latest"
 dotnet = "8"
 
 [settings]
-idiomatic_version_file_enable_tools = ["python", "go", "node"]
+idiomatic_version_file_enable_tools = ["python", "go", "node", "ruby"]
 color = true
