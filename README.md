@@ -18,6 +18,7 @@ brew install jdx/tap/rtx
 brew tap homebrew/cask-fonts
 brew install font-fira-code
 brew install --cask font-symbols-only-nerd-font
+brew install ghostty
 brew install --cask wezterm --no-quarantine
 tempfile=$(mktemp) \
   && curl -o $tempfile https://raw.githubusercontent.com/wez/wezterm/main/termwiz/data/wezterm.terminfo \
