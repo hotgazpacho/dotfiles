@@ -53,5 +53,5 @@ font-family = "Symbols Nerd Font Mono"
 font-size = 15
 adjust-icon-height = 90
 theme = Catppuccin Macchiato
-window-height = 60
-window-width = 120
+#window-height = 60
+#window-width = 120
