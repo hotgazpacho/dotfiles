@@ -48,10 +48,27 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
+font-family = "Monaspace Neon NF"
+# ss01: != and ===
+font-feature = "ss01"
+# cv01: slashed 0
+font-feature = "cv01 2"
+# ss02: <= and >=
+font-feature = "ss02"
+# ss03: -> and ~>
+font-feature = "ss03"
+# ss04: <> and </>
+font-feature = "ss04"
+# ss09: arrows
+font-feature = "ss09"
+# liga: //, ..., ||
+font-feature = "liga"
+# calt: texture healing
+font-feature = "calt"
 font-family = "Fira Code Retina"
 font-family = "Symbols Nerd Font Mono"
 font-size = 15
-adjust-icon-height = 90
+#adjust-icon-height = 90
 theme = Catppuccin Macchiato
 #window-height = 60
 #window-width = 120

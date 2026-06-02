@@ -16,7 +16,7 @@ brew install direnv\
  neovim
 brew install jdx/tap/rtx
 brew tap homebrew/cask-fonts
-brew install font-fira-code
+brew install font-fira-code font-monaspace-nf
 brew install --cask font-symbols-only-nerd-font
 brew install ghostty
 brew install --cask wezterm --no-quarantine
@@ -78,10 +78,13 @@ asdf reshim golang
 ## GitHub CLI extensions
 
 - [gh-dash](https://github.com/dlvhdr/gh-dash)
+
   ```console
   GH_HOST="" gh extension install dlvhdr/gh-dash
   ```
+
 - [gh-f](https://github.com/gennaro-tedesco/gh-f)
+
   ```console
   GH_HOST="" gh extension install gennaro-tedesco/gh-f
   ```
