@@ -66,6 +66,6 @@ font-feature = "liga"
 # calt: texture healing
 font-feature = "calt"
 font-family = "Fira Code Retina"
-font-size = 15
+font-size = 16
 theme = Catppuccin Macchiato
 
