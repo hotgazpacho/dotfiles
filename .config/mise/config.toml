@@ -6,7 +6,7 @@ rust = "latest"
 ruby = "latest"
 pnpm = "latest"
 biome = "latest"
-dotnet = "8"
+dotnet = "10"
 lua = "5.1"
 
 [settings]

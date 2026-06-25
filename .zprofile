@@ -15,3 +15,7 @@ eval "$(pyenv init --path)"
 if [[ -f ~/.orbstack/shell/init.zsh ]]; then
   source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 fi
+
+if [[ -d $HOME/.dotnet/tools ]]; then
+  export PATH="$PATH:$HOME/.dotnet/tools"
+fi
