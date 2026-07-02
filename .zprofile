@@ -4,6 +4,7 @@ then
 else 
   HOMEBREW_PREFIX="/usr/local"
 fi
+export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
 eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
 if which -p "mise" &> /dev/null; then
   eval "$(mise activate zsh --shims)"

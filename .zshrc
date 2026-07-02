@@ -146,6 +146,11 @@ fi
 
 export PATH=/usr/local/sbin:$PATH
 
+# Adds ~/Applications to the path if the directory exists
+if [ -d "$HOME/Applications" ]; then
+  export PATH="$HOME/Applications:$PATH"
+fi
+
 # Adds ~/bin to the path if the directory exists
 if [ -d "$HOME/bin" ]; then
   export PATH="$HOME/bin:$PATH"
