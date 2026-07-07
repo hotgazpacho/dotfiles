@@ -6,7 +6,6 @@ rust = "latest"
 ruby = "latest"
 pnpm = "latest"
 biome = "latest"
-dotnet = "10"
 lua = "5.1"
 terraform = "latest"
 
