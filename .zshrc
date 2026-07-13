@@ -64,7 +64,7 @@ eval "$(pyenv init --path)"
 # Add wisely, as too many plugins slow down shell startup.
 # NOTE: yarn-autocompletions requires installation
 # git clone https://github.com/g-plane/zsh-yarn-autocompletions && zsh-yarn-autocompletions && ./install.sh $ZSH_CUSTOM/plugins
-plugins=(gh golang bazel pyenv 1password macos kubectl fzf-tab)
+plugins=(gh golang bazel pyenv 1password macos kubectl fzf-tab docker docker-compose azure dotnet helm)
 
 # Make Homebrew's completions available
 # See https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
