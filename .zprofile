@@ -17,7 +17,8 @@ if [[ -f ~/.orbstack/shell/init.zsh ]]; then
   source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 fi
 
+# Add the dotnet root and tools to the path, if they exist.
 if [[ -d $HOME/.dotnet ]]; then
   export DOTNET_ROOT="$HOME/.dotnet"
-  export PATH="$PATH:$HOME/.dotnet:$HOME/.dotnet/tools"
+  export PATH="$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools"
 fi
